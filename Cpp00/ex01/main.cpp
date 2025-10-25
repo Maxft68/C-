@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:17:35 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 17:50:58 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/10/25 19:35:35 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include "PhoneBook.hpp"
 
 int main(){
+	PhoneBook phonebook;
 	while(42){
-		PhoneBook phonebook;
 		
 		std::string line;
 		std::getline(std::cin, line);

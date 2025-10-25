@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:54:24 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 18:21:30 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/10/25 19:34:38 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	PhoneBook::ADD(){
 	}
 	this->contact[x].setSecret(line);
 
-	
 	x++;
 }
 
@@ -75,9 +74,14 @@ void	PhoneBook::SEARCH(){
 	std::cout << "|" << std::setw(10) << "Index" << "|"
 			<< std::setw(10) << "First Name" << "|"
 			<< std::setw(10) << "Last Name" << "|"
-			<< std::setw(10) << "Nickname" << "|";
-	for (int i = 0; i < 8;){
-		std::cout << this->getFirstName()
+			<< std::setw(10) << "Nickname" << "|" << std::endl;
+	std::string line;
+	for (int i = 0; i < 8; i++){
+		std::cout << this->contact[i].getFirstName() << std::endl;
+		std::cout << "|" << std::setw(10) << i << "|"
+				<< std::setw(10) << this->contact[i].getFirstName() << "|"
+				<< std::setw(10) << this->contact[i].getName() << "|"
+				<< std::setw(10) << this->contact[i].getNickName() << "|";
 	}
 }
 

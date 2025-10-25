@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 10:39:03 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 18:17:57 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/10/25 19:34:56 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ class Contact{
 		void setNickName(std::string str);
 		void setSecret(std::string str);
 
-		void getFirstName(int index);
-		void getName(int index);
-		void getNumber(int index);
-		void getNickName(int index);
-		void getSecret(int index);
+		std::string getFirstName();
+		std::string getName();
+		std::string getNumber();
+		std::string getNickName();
+		std::string getSecret();
 };

@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:24:20 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 18:22:54 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/10/25 19:34:49 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,23 @@ void Contact::setSecret(std::string str){
 
 
 
-void Contact::getFirstName(int index){
-	std::cout << this->
+std::string	Contact::getFirstName(){
+	return(this->_FirstName);
 }
 
-void Contact::getName(int index){
-	
+std::string Contact::getName(){
+	return(this->_LastName);
 }
 
-void Contact::getNumber(int index){
-	
+std::string Contact::getNumber(){
+	return(this->_PhoneNumber);
 }
 
-void Contact::getNickName(int index){
-	
+std::string Contact::getNickName(){
+	return(this->_NickName);
 }
-	
 
-void Contact::getSecret(int index){
-	
+std::string Contact::getSecret(){
+	return(this->_DarkestSecret);
 }
+
