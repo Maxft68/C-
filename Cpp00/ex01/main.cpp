@@ -17,7 +17,7 @@
 int main(){
 	PhoneBook phonebook;
 	while(42){
-		
+		std::cout << "What do you want to do ? (ADD, SEARCH or EXIT)" << std::endl;
 		std::string line;
 		std::getline(std::cin, line);
 
@@ -27,7 +27,6 @@ int main(){
 			phonebook.SEARCH();
 		else if(line == "EXIT")
 			phonebook.EXIT();
-			
 	}
 }
 

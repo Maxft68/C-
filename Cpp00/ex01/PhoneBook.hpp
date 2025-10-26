@@ -27,5 +27,6 @@ class PhoneBook{
 		void ADD();
 		void SEARCH();
 		void EXIT();
+		std::string resize(std::string str);
 		
 };
