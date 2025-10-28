@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:54:24 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 19:34:38 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:52:16 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,3 +121,15 @@ PhoneBook::PhoneBook() {}
 
 
 PhoneBook::~PhoneBook() {}
+
+
+
+#include <sstream>
+
+void couille(std::string str){
+	std::stringstream ss;
+	int n;
+	ss << str;
+	ss >> n;
+	
+}
