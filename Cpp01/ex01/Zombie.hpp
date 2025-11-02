@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 12:01:44 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 19:20:53 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/11/02 14:50:22 by max               #+#    #+#             */
+/*   Updated: 2025/11/02 20:02:00 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,16 @@
 #include <cstring>
 #include <cstdlib>
 #include <iomanip>
-#include "Contact.hpp"
 
-class PhoneBook{
+class Zombie{
 	private:
-		Contact contact[8];
-
-		
+		std::string _name;
 	public:
-
-		PhoneBook();
-		~PhoneBook();
-		void ADD();
-		void SEARCH();
-		void EXIT();
-		std::string resize(std::string str);
-		
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		void announce (void);
+		void setName(std::string name);
 };
+
+Zombie* zombieHorde( int N, std::string name );

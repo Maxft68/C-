@@ -1,14 +1,14 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = megaphone
-OBJ = $(SRC:.cpp=.o)
+NAME = zombie
 
-SRC = Megaphone.cpp
+SRC = Zombie.cpp main.cpp zombieHorde.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) 
 
 $(NAME): $(OBJ)
-	@echo Compilation 🕺📣
+	@echo Compilation 🧟🧟
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
