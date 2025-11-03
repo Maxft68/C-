@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 14:17:35 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/03 15:18:56 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/11/03 15:50:07 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/11/03 17:14:29 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
-
-int main(){
-	PhoneBook phonebook;
-	while(42){
-		std::cout << "What do you want to do ? (ADD, SEARCH or EXIT)" << std::endl;
-		std::string line;
-		std::getline(std::cin, line);
-
-		if (line == "ADD")
-			phonebook.ADD();
-		if(line == "SEARCH")
-			phonebook.SEARCH();
-		if(line == "EXIT" || std::cin.eof())
-			phonebook.EXIT();
-	}
+const std::string &Weapon::getType() const{
+	return this->_type;
 }
 
+
+void Weapon::setType(std::string new_value){
+	this->_type = new_value;
+}
+
+Weapon::Weapon(){
+	std::cout << "A fire gun is born" << std::endl;
+}
+
+Weapon::~Weapon(){
+	std::cout << "A fire gun is broked" << std::endl;
+}

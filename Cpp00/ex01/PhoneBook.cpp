@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:54:24 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/28 11:52:16 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:25:46 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,27 @@ void	PhoneBook::ADD(){
 	std::cout << "What's your first name ?" << std::endl;
 	std::string line;
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		this->EXIT();
 	while(line.empty()){
 		std::cout << "Easy question: WHAT'S YOUR FIRST NAME !?" << std::endl;
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			this->EXIT();
 	}
 	this->contact[x].setFirstName(line);
 	
 	
 	line.clear();
-	std::cout << "What's your name ?" << std::endl;
+	std::cout << "What's your last name ?" << std::endl;
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		this->EXIT();
 	while(line.empty()){
-		std::cout << "Easy question: WHAT'S YOUR NAME !?" << std::endl;
+		std::cout << "Easy question: WHAT'S YOUR LAST NAME !?" << std::endl;
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			this->EXIT();
 	}
 	this->contact[x].setName(line);
 
@@ -41,9 +49,25 @@ void	PhoneBook::ADD(){
 	line.clear();
 	std::cout << "What's your Phone Number ?" << std::endl;
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		this->EXIT();
+	for (int i = 0; line[i] ; i++){
+		if (!(line[i] >= '0' && line[i] <= '9')){
+			line.clear();
+			break;
+		}
+	}
 	while(line.empty()){
 		std::cout << "Easy question: WHAT'S YOUR NUMBER !?" << std::endl;
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			this->EXIT();
+		for (int i = 0; line[i] ; i++){
+			if (!(line[i] >= '0' && line[i] <= '9')){
+				std::cout << "\'" << line[i] << "\' IS NOT A NUMBER" << std::endl;
+				line.clear();
+			}
+		}
 	}
 	this->contact[x].setNumber(line);
 
@@ -51,9 +75,13 @@ void	PhoneBook::ADD(){
 	line.clear();
 	std::cout << "What's your Nickname ?" << std::endl;
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		this->EXIT();
 	while(line.empty()){
 		std::cout << "Easy question: WHAT'S YOUR NICKNAME !?" << std::endl;
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			this->EXIT();
 	}
 	this->contact[x].setNickName(line);
 	
@@ -61,9 +89,13 @@ void	PhoneBook::ADD(){
 	line.clear();
 	std::cout << "👀What's your Darkest Secret ?👀" << std::endl;
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		this->EXIT();
 	while(line.empty()){
 		std::cout << "Easy question:👹 WHAT'S YOUR DARKEST SECRET !?👹" << std::endl;
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			this->EXIT();
 	}
 	this->contact[x].setSecret(line);
 
@@ -96,9 +128,13 @@ void	PhoneBook::SEARCH(){
 
 	std::cout << "Which contact do you want to see in detail ? (Type the index)" << std::endl;
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		this->EXIT();
 	while(line.empty() || line.length() > 1 || line[0] < '1' || line[0] > '8'){
 		std::cout << "Invalid index. Please enter a number between 1 and 8." << std::endl;
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+		this->EXIT();
 	}
 	int index = line[0] - '0';
 	index += -1;
@@ -109,7 +145,6 @@ void	PhoneBook::SEARCH(){
 	std::cout << "Darkest Secret: " << this->contact[index].getSecret() << std::endl;
 	std::cout << "--------------------------------------------" << std::endl << std::endl;
 }
-
 
 
 void	PhoneBook::EXIT(){

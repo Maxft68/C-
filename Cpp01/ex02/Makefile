@@ -1,14 +1,14 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = phonebook
+NAME = brain
 
-SRC = Main.cpp PhoneBook.cpp Contact.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) 
 
 $(NAME): $(OBJ)
-	@echo Compilation 🕺📣
+	@echo Compilation 📫
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
