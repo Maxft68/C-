@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 15:50:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/03 17:31:57 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/11/03 17:27:23 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/11/03 17:28:34 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+#include "HumanA.hpp"
+#include "HumanA.hpp"
 #include "Weapon.hpp"
 
-const std::string &Weapon::getType() const{
-	return this->_type;
-}
-
-
-void Weapon::setType(std::string new_value){
-	this->_type = new_value;
-}
-
-Weapon::Weapon(){
-	std::cout << "A fire gun is born" << std::endl;
-}
-
-Weapon::~Weapon(){
-	std::cout << "A fire gun is broked" << std::endl;
-}
-
-Weapon::Weapon(std::string type_of_weapon){
-	std::cout << "A fire gun with name is born" << std::endl;
-	this->_type = type_of_weapon;
+int main()
+{
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("some other type of club");
+	bob.attack();
+	}
+	{
+	Weapon club = Weapon("crude spiked club");
+	HumanB jim("Jim");
+	jim.setWeapon(club);
+	jim.attack();
+	club.setType("some other type of club");
+	jim.attack();
+	return 0;
 }
