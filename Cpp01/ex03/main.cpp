@@ -6,14 +6,14 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:27:23 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/04 11:16:33 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:29:12 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "HumanA.hpp"
-#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include "Weapon.hpp"
 
 int main()
@@ -24,14 +24,18 @@ int main()
 	bob.attack();
 	club.setType("some other type of club");
 	bob.attack();
+	std::cout << "-----------------DESTRUCTION--REF--------------" << std::endl;
 	}
+	std::cout << "-----------------------------------------------" << std::endl <<std::endl;
 	{
 	Weapon club = Weapon("crude spiked club");
 	HumanB jim("Jim");
-	jim.setWeapon(club);
+	jim.attack();// without weapon
+	jim.setWeapon(&club);
 	jim.attack();
 	club.setType("some other type of club");
 	jim.attack();
+	std::cout << "---------------DESTRUCTION POINTER ?! NO-------" << std::endl;
 	}
 	return 0;
 }

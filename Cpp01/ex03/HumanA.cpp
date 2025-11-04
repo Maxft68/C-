@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:50:01 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/04 11:12:39 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:19:48 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ HumanA::~HumanA (){
 }
 
 void HumanA::attack(){
-	std::cout << this->_name << "attack with " << &_weapon << std::endl;
+	std::cout << this->_name << " attack with " << _weapon.getType() << std::endl;
 }
