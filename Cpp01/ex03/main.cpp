@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:27:23 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/04 16:29:12 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/05 12:07:31 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int main()
 	bob.attack();
 	std::cout << "-----------------DESTRUCTION--REF--------------" << std::endl;
 	}
+	
 	std::cout << "-----------------------------------------------" << std::endl <<std::endl;
+	
 	{
 	Weapon club = Weapon("crude spiked club");
 	HumanB jim("Jim");

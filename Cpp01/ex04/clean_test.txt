@@ -1,0 +1,4 @@
+Hello world
+This is a test
+apple banana cherry
+The word test appears twice: test
