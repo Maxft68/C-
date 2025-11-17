@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 08:50:39 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/17 14:52:08 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/11/17 14:44:19 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/11/17 15:21:54 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl(){
-	std::cout << "An Harl is born" << std::endl;
+	//std::cout << "An Harl is born" << std::endl;
 }
 
 Harl::~Harl(){
 
-	std::cout << "Harl is dying" << std::endl;
+	//std::cout << "Harl is dying" << std::endl;
 } 
 	
 
@@ -56,8 +56,7 @@ void Harl::complain(std::string level){
 		std::cout << "No method has this name" << std::endl;
 		return;
 	}
-
+	
 	(this->*funcs[i])();
 }
-
 
