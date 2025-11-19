@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:23:12 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/19 18:57:39 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:41:02 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Fixed{
 		bool operator<=(const Fixed& other) const;
 		bool operator==(const Fixed& other) const;
 		bool operator!=(const Fixed& other) const;
+		Fixed operator+(const Fixed& other) const;
 };
 
 

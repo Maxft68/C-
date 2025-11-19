@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:17:00 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/19 19:20:09 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:46:41 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,3 +91,10 @@ std::ostream& operator<<(std::ostream& os, const Fixed& other){
 	bool Fixed::operator!=(const Fixed& other) const{
 		return (this->_int_value != other._int_value);
 	}
+
+	Fixed Fixed::operator+(const Fixed& other) const{
+		Fixed x(this->_int_value + other._int_value);//Fixed bernard = brigitte + charles
+		return(x);
+	}
+
+
