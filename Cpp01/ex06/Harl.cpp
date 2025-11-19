@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:44:19 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/17 15:21:54 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/18 12:08:54 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Harl::~Harl(){
 
 	//std::cout << "Harl is dying" << std::endl;
 } 
-	
+
 
 void Harl::debug(void){
 	std::cout << "Debug say hello" << std::endl;
@@ -51,10 +51,10 @@ void Harl::complain(std::string level){
 	for (; i < size; i++){
 		if (level == array_func[i])
 			break;
-	}
-	if (i == size){//do not find
-		std::cout << "No method has this name" << std::endl;
-		return;
+		}
+		if (i == size){//do not find
+			std::cout << "No method has this name" << std::endl;
+			return;
 	}
 	
 	(this->*funcs[i])();
