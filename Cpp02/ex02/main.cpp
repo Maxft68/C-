@@ -6,9 +6,11 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 07:35:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/19 19:55:16 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:53:59 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Fixed.hpp"
 
 #include "Fixed.hpp"
 
@@ -25,7 +27,7 @@ int main( void ) {
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 
-	
+
 	// std::cout << std::endl;
 	// Fixed const val1(10);
 	// Fixed const val2(20);
