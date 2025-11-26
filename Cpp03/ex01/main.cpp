@@ -6,33 +6,22 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:57:25 by max               #+#    #+#             */
-/*   Updated: 2025/11/26 12:06:00 by max              ###   ########.fr       */
+/*   Updated: 2025/11/26 15:54:53 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main() {\
+int main() {
     
-    ClapTrap clapZ;
-    ClapTrap clap("Bob");
+    ClapTrap sponge("Bob");
+    sponge.attack("Alice1");
+    std::cout << std::endl;
     
-    clapZ.attack("Space");
-    clap.attack("Alice");
-    clap.attack("Alice2");
-    clap.attack("Alice3");
-    clap.attack("Alice4");
-    clap.attack("Alice5");
-    clap.attack("Alice6");
-    clap.attack("Alice7");
-    clap.attack("Alice8");
-    clap.attack("Alice9");
-    clap.attack("Alice10");
-    clap.attack("Alice11");
+    ScavTrap scav("Scavy");
+    scav.attack("Bob");
+    scav.guardGate();
     
-    clap.beRepaired(42);
-    clap.attack("Bob");
-    clap.takeDamage(50);
-    clap.beRepaired(10);
     return 0;
-}   
+}

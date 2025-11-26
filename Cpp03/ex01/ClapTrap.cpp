@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:56:29 by max               #+#    #+#             */
-/*   Updated: 2025/11/26 15:33:05 by max              ###   ########.fr       */
+/*   Updated: 2025/11/26 15:43:46 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ClapTrap::ClapTrap() : _hitpoints(10), _energy_points(10), _attack_damage(0) {
     std::cout << "ClapTrap default constructed." << std::endl;
 }
+
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0) {
     std::cout << "ClapTrap " << name << " constructed." << std::endl;
@@ -51,7 +52,7 @@ void ClapTrap::attack(const std::string& target) {
         std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
     }
     else {
-        std::cout << "ClapTrap " << _name << " has no energy or _hitpoints left to attack." << std::endl;
+        std::cout << "ClapTrap " << _name << " has no energy or hitpoints left to attack." << std::endl;
     }
 }
 
@@ -71,10 +72,10 @@ void ClapTrap::beRepaired(unsigned int amount) {
     if (_energy_points > 0 && _hitpoints > 0) {
         _energy_points--;
         _hitpoints += amount;
-        std::cout << "ClapTrap " << _name << " is repaired by " << amount << " points! New _hitpoints: " << _hitpoints << std::endl;
+        std::cout << "ClapTrap " << _name << " is repaired by " << amount << " points! New hitpoints: " << _hitpoints << std::endl;
     } 
     else {
-        std::cout << "ClapTrap " << _name << " has no energy or _hitpoints left to repair." << std::endl;
+        std::cout << "ClapTrap " << _name << " has no energy or hitpoints left to repair." << std::endl;
     }
 }
 
