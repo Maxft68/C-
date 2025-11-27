@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:53:41 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/27 16:07:32 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:55:40 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ Animal& Animal::operator=(const Animal& other){
 }
 
 void makeSound(void){
-	std::cout << "Just a cry" << std::endl;
+	std::cout << "Just an animal cry" << std::endl;
 }
