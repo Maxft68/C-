@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:46:59 by max               #+#    #+#             */
-/*   Updated: 2025/11/26 15:47:27 by max              ###   ########.fr       */
+/*   Updated: 2025/11/27 07:59:47 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : _x(0), y(0){
+Point::Point() : _x(0), _y(0){
 	//std::cout << "Default Point constructor called" << std::endl;
 }
 
