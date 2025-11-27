@@ -5,39 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:57:25 by max               #+#    #+#             */
-/*   Updated: 2025/11/27 13:08:50 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/11/27 13:51:13 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/11/27 13:53:30 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#include "Animal.hpp"
 
-int main() {
 
-	DiamondTrap trap("Trap");
-	std::cout << std::endl;
-	trap.whoAmI();
-	std::cout << std::endl;
-	
-	// {
-	// 	ClapTrap sponge("Bob");
-	// 	sponge.attack("Alice1");
-	// 	std::cout << std::endl;
-	// }
-
-	// ScavTrap scav("Scavy");
-	// scav.attack("Bob");
-	// scav.guardGate();
-	// std::cout << std::endl;
-	
-	// {
-	// 	FragTrap frag("Frag");
-	// 	frag.attack("bernard");
-	// }
-	// std::cout << std::endl;
-	
+int main(){
+{
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 	return 0;
 }

@@ -1,37 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 12:01:44 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/27 16:59:59 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/11/27 13:56:44 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/11/27 14:23:03 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Animal.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <cstdlib>
-#include <iomanip>
-#include "Contact.hpp"
-
-class PhoneBook{
-	private:
-		Contact contact[8];
-
-		
-	public:
-
-		PhoneBook();
-		~PhoneBook();
-		void ADD();
-		void SEARCH();
-		void EXIT();
-		std::string resize(std::string str);
-		bool printable(std::string str, size_t length);
-		
+class Dog : public Animal{
+	
 };

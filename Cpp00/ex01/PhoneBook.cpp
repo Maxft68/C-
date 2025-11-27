@@ -6,11 +6,19 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:54:24 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/03 15:25:46 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:24:25 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+bool PhoneBook::printable(std::string str, size_t length){
+	for (size_t i = 0; i < length; i++){
+		if (!std::isprint(str[i]))
+			return(false);
+	}
+	return(true);
+}
 
 void	PhoneBook::ADD(){
 	static int x = 0;
@@ -20,10 +28,11 @@ void	PhoneBook::ADD(){
 
 	std::cout << "What's your first name ?" << std::endl;
 	std::string line;
+	
 	std::getline(std::cin, line);
 	if (std::cin.eof())
 		this->EXIT();
-	while(line.empty()){
+	while(line.empty() || (printable(line, line.length()) == false)){
 		std::cout << "Easy question: WHAT'S YOUR FIRST NAME !?" << std::endl;
 		std::getline(std::cin, line);
 		if (std::cin.eof())
@@ -37,7 +46,7 @@ void	PhoneBook::ADD(){
 	std::getline(std::cin, line);
 	if (std::cin.eof())
 		this->EXIT();
-	while(line.empty()){
+	while(line.empty() || (printable(line, line.length()) == false)){
 		std::cout << "Easy question: WHAT'S YOUR LAST NAME !?" << std::endl;
 		std::getline(std::cin, line);
 		if (std::cin.eof())
@@ -57,7 +66,7 @@ void	PhoneBook::ADD(){
 			break;
 		}
 	}
-	while(line.empty()){
+	while(line.empty() || (printable(line, line.length()) == false)){
 		std::cout << "Easy question: WHAT'S YOUR NUMBER !?" << std::endl;
 		std::getline(std::cin, line);
 		if (std::cin.eof())
@@ -77,7 +86,7 @@ void	PhoneBook::ADD(){
 	std::getline(std::cin, line);
 	if (std::cin.eof())
 		this->EXIT();
-	while(line.empty()){
+	while(line.empty() || (printable(line, line.length()) == false)){
 		std::cout << "Easy question: WHAT'S YOUR NICKNAME !?" << std::endl;
 		std::getline(std::cin, line);
 		if (std::cin.eof())
@@ -91,7 +100,7 @@ void	PhoneBook::ADD(){
 	std::getline(std::cin, line);
 	if (std::cin.eof())
 		this->EXIT();
-	while(line.empty()){
+	while(line.empty() || (printable(line, line.length()) == false)){
 		std::cout << "Easy question:👹 WHAT'S YOUR DARKEST SECRET !?👹" << std::endl;
 		std::getline(std::cin, line);
 		if (std::cin.eof())
@@ -130,7 +139,7 @@ void	PhoneBook::SEARCH(){
 	std::getline(std::cin, line);
 	if (std::cin.eof())
 		this->EXIT();
-	while(line.empty() || line.length() > 1 || line[0] < '1' || line[0] > '8'){
+	while(line.empty()  || (printable(line, line.length()) == false) || line.length() > 1 || line[0] < '1' || line[0] > '8'){
 		std::cout << "Invalid index. Please enter a number between 1 and 8." << std::endl;
 		std::getline(std::cin, line);
 		if (std::cin.eof())
