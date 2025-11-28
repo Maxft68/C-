@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 13:53:41 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:44:38 by max              ###   ########.fr       */
+/*   Created: 2025/11/27 14:23:46 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/11/28 15:56:39 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <string>
-#include <fstream>
+#include "Animal.hpp"
 
-class Animal{
+class Cat : public Animal{
+	
 	protected:
 		std::string _type;
-		
-	public:
-		Animal();
-		Animal(const Animal& copy);
-		Animal& operator=(const Animal& other);
-		virtual ~Animal();
-		virtual void makeSound(void) const;
-		virtual std::string getType() const;
-};
 
+	public:
+		Cat();
+		Cat(const Cat& copy);
+		Cat& operator=(const Cat& other);
+		virtual ~Cat();
+		virtual void makeSound(void) const;
+		std::string getType() const;
+};

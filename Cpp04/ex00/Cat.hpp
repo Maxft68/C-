@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:23:46 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/27 15:05:44 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:05:06 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 class Cat : public Animal{
 	
-	public:
+	protected:
+		std::string _type;
 
-	
+	public:
+		Cat();
+		Cat(const Cat& copy);
+		Cat& operator=(const Cat& other);
+		virtual ~Cat();
+		virtual void makeSound(void) const;
+		std::string getType() const;
 };
