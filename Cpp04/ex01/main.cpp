@@ -6,39 +6,45 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:51:13 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 15:10:28 by max              ###   ########.fr       */
+/*   Updated: 2025/11/29 17:42:26 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "Brain.hpp"
 
-int main(){
-	const Animal* meta = new Animal();
-	std::cout << std::endl;
+int main()
+{
+	Cat* garfield = new Cat();
 	
-	const Animal* j = new Dog();
-	std::cout << std::endl;
-	
-	const Animal* i = new Cat();
-	std::cout << std::endl;
-	
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound(); //will output the dog sound!
-	std::cout << std::endl;
-	
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	std::cout << std::endl;
-	
-	std::cout << meta->getType() << " " << std::endl;
-	meta->makeSound(); //will output the animal sound!
+	garfield->getBrain()->setIdea(0, "I hate dogs");
+	garfield->getBrain()->setIdea(1, "I love Lasagna");
+
+	std::cout << "Garfield's idea 0: " << garfield->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Garfield's idea 1: " << garfield->getBrain()->getIdea(1) << std::endl;
+	std::cout << "Garfield's idea 2: " << garfield->getBrain()->getIdea(2) << std::endl;
+	std::cout << "Garfield's idea 200: " << garfield->getBrain()->getIdea(200) << std::endl;
+
+	delete garfield;
 	std::cout << std::endl;
 
-	delete meta;
-	delete i;
-	delete j;
 
-	return (0);
+	Dog Idefix;
+	Idefix.getBrain()->setIdea(0, "I want eat a cat");
+	
+	{
+		Dog clone = Idefix;
+		std::cout << "Idefix's idea: " << Idefix.getBrain()->getIdea(0) << std::endl;
+		std::cout << "clone's idea: " << clone.getBrain()->getIdea(0) << std::endl;
+		
+		// Modify clone's brain
+		clone.getBrain()->setIdea(0, "I want a ball");
+		std::cout << "clone's new idea: " << clone.getBrain()->getIdea(0) << std::endl;
+		std::cout << "Idefix's idea (should still be bone): " << Idefix.getBrain()->getIdea(0) << std::endl;
+	} 
+	
+	std::cout << "End of main, let's destruct all" << std::endl << std::endl;
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:53:41 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:44:38 by max              ###   ########.fr       */
+/*   Updated: 2025/11/29 18:08:07 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
+
+#define RED_RESET(str) RED << (str) << RESET
+#define GREEN_RESET(str) GREEN << (str) << RESET
 
 class Animal{
 	protected:

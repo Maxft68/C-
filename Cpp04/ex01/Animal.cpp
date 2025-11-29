@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:53:12 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:51:43 by max              ###   ########.fr       */
+/*   Updated: 2025/11/29 18:06:45 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Animal::Animal(){
 	this->_type = "Animal";
-	std::cout << "Animal Default operator constructed" << std::endl;
+	std::cout << GREEN_RESET("Animal Default operator constructed") << std::endl;
 }
 
 Animal::Animal(const Animal& copy){
 	*this = copy;
-	std::cout << "Animal Copy operator constructed" << std::endl;
+	std::cout << GREEN_RESET("Animal Copy operator constructed") << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other){
@@ -34,7 +34,7 @@ void Animal::makeSound(void) const{
 }
 
 Animal::~Animal(){
-	std::cout << "Animal destructed" << std::endl;
+	std::cout << RED_RESET("Animal destructed") << std::endl;
 }
 
 std::string Animal::getType() const{

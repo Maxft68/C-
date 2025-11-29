@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:56:47 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:18:55 by max              ###   ########.fr       */
+/*   Updated: 2025/11/29 18:06:44 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 Dog::Dog() : Animal(){
 	this->_type = "Dog";
-	std::cout << "Dog Default operator constructed" << std::endl;
+	this->_brain = new Brain();
+	std::cout << GREEN_RESET("Dog Default operator constructed") << std::endl;
 }
 
 Dog::Dog(const Dog& copy) : Animal(copy) {
-	*this = copy;
-	std::cout << "Dog Copy operator constructed" << std::endl;
+	this->_type = copy._type;
+	this->_brain = new Brain(*copy._brain);
+	std::cout << GREEN_RESET("Dog Copy Constructor called") << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other){
 	if (this != &other){
 		this->_type = other._type;
+		delete this->_brain;
+		this->_brain = new Brain(*other._brain);
 	}
 	return *this;
 }
@@ -34,9 +38,14 @@ void Dog::makeSound(void) const{
 }
 
 Dog::~Dog(){
-	std::cout << "Dog destructed" << std::endl;
+	std::cout << RED_RESET("Dog destructed") << std::endl;
+	delete this->_brain;
 }
 
 std::string Dog::getType() const{
 	return this->_type;
+}
+
+Brain* Dog::getBrain() const{
+	return this->_brain;
 }

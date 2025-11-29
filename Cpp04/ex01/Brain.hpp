@@ -6,21 +6,24 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:55:50 by max               #+#    #+#             */
-/*   Updated: 2025/11/28 15:59:32 by max              ###   ########.fr       */
+/*   Updated: 2025/11/29 12:33:50 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+
+#define BRAIN_IDEAS_SIZE 100
 
 class Brain{
 	private:
-		std::string ideas[100];
+		std::string ideas[BRAIN_IDEAS_SIZE];
 	public:
 		Brain();
 		Brain(const Brain& copy);
 		Brain& operator=(const Brain& other);
 		~Brain();
+		
+		void setIdea(int index, const std::string& idea);
+		std::string getIdea(int index) const;
 };

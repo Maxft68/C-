@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:23:12 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/19 16:43:07 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:52:30 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,3 @@ class Fixed{
 
 
 std::ostream& operator<<(std::ostream& os, const Fixed& other);
-
-/*std::ostream & operator<<(std::ostream & os, const Fixed & other)
-{
-	os << other.getRawBits() << std::endl;
-	return os;
-}
-
-Fixed a;
-
-std::cout << a;
-
-
-FIXED -> roundf(float * 256) || roundf(float << 8)
-
-FLOAT -> fixed / 256
-
-*/
