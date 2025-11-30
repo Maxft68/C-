@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 17:53:21 by max               #+#    #+#             */
-/*   Updated: 2025/11/30 17:53:22 by max              ###   ########.fr       */
+/*   Created: 2025/11/30 17:53:44 by max               #+#    #+#             */
+/*   Updated: 2025/11/30 18:33:06 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include "AAnimal.hpp"
 
-#include "Animal.hpp"
-
-Animal::Animal(){
+AAnimal::AAnimal(){
 	this->_type = "Animal";
-	std::cout << GREEN_RESET("Animal Default operator constructed") << std::endl;
+	std::cout << GREEN_RESET("AAnimal Default operator constructed") << std::endl;
 }
 
-Animal::Animal(const Animal& copy){
+AAnimal::AAnimal(const AAnimal& copy){
 	*this = copy;
-	std::cout << GREEN_RESET("Animal Copy operator constructed") << std::endl;
+	std::cout << GREEN_RESET("AAnimal Copy operator constructed") << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other){
+AAnimal& AAnimal::operator=(const AAnimal& other){
 	if (this != &other){
 		this->_type = other._type;
 	}
 	return *this;
 }
 
-void Animal::makeSound(void) const{
-	std::cout << "Just an animal cry" << std::endl;
+void AAnimal::makeSound(void) const {
+	std::cout << "I can't cry!!" << std::endl;
 }
 
-Animal::~Animal(){
-	std::cout << RED_RESET("Animal destructed") << std::endl;
+AAnimal::~AAnimal(){
+	std::cout << RED_RESET("AAnimal destructed") << std::endl;
 }
 
-std::string Animal::getType() const{
+std::string AAnimal::getType() const{
 	return this->_type;
 }
