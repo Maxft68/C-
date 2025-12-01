@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:23:46 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/01 15:34:30 by max              ###   ########.fr       */
+/*   Created: 2025/12/01 16:07:29 by max               #+#    #+#             */
+/*   Updated: 2025/12/01 17:12:18 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal{
+class AMateria;
 
-	// protected:
-	// 	std::string _type;
-		
-	private:
-		Brain* _brain;
-
-	public:
-		Cat();
-		Cat(const Cat& copy);
-		Cat& operator=(const Cat& other);
-		virtual ~Cat();
-		virtual void makeSound(void) const;
-		// std::string getType() const;
-		Brain* getBrain() const;
+class ICharacter //no canonical form on interface
+{
+    public:
+        virtual ~ICharacter() {}
+        virtual std::string const & getName() const = 0;
+        virtual void equip(AMateria* m) = 0;
+        virtual void unequip(int idx) = 0;
+        virtual void use(int idx, ICharacter& target) = 0;
 };

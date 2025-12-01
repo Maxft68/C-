@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:53:12 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:51:43 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:32:36 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ Animal::~Animal(){
 }
 
 std::string Animal::getType() const{
+	//std::cout << "Animal getType called" << std::endl;
 	return this->_type;
 }

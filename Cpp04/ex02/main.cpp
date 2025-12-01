@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:51:13 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/30 18:31:17 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:44:05 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main()
 		// Modify clone's brain
 		clone.getBrain()->setIdea(0, "I want a ball");
 		std::cout << "clone's new idea: " << clone.getBrain()->getIdea(0) << std::endl;
-		std::cout << "Idefix's idea (should still be bone): " << Idefix.getBrain()->getIdea(0) << std::endl;
+		std::cout << "Idefix's idea " << Idefix.getBrain()->getIdea(0) << std::endl;
 	} 
 	
 	std::cout << "End of main, let's destruct all" << std::endl << std::endl;

@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 21:08:39 by max               #+#    #+#             */
-/*   Updated: 2025/11/30 21:24:45 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 17:43:16 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "ICharacter.hpp"
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -34,7 +35,7 @@ class AMateria{
 		AMateria(std::string const & type);
 
 		AMateria& operator=(const AMateria& other);
-		std::string const & getType() const; //Returns the materia type
+		std::string const & getType() const; //Return the materia type (Ice or Cure)
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };

@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:56:47 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/30 17:56:25 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:42:33 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ Dog::~Dog(){
 	delete this->_brain;
 }
 
-std::string Dog::getType() const{
-	return this->_type;
-}
+// std::string Dog::getType() const{
+// 	return this->_type;
+// }
 
 Brain* Dog::getBrain() const{
 	return this->_brain;

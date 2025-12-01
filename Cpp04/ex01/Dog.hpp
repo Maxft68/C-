@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:56:44 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/29 11:42:10 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:34:48 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ class Dog : public Animal{
 		Dog& operator=(const Dog& other);
 		virtual ~Dog();
 		virtual void makeSound(void) const;
-		std::string getType() const;
+		// std::string getType() const;
 		Brain* getBrain() const;
 };

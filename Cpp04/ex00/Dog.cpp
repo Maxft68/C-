@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:56:47 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:18:55 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 13:55:33 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Dog::~Dog(){
 	std::cout << "Dog destructed" << std::endl;
 }
 
-std::string Dog::getType() const{
-	return this->_type;
-}
+// std::string Dog::getType() const{
+// 	std::cout << "Dog getType called" << std::endl;
+// 	return this->_type;
+// }

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:23:46 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/01 15:34:30 by max              ###   ########.fr       */
+/*   Created: 2025/12/01 23:04:17 by max               #+#    #+#             */
+/*   Updated: 2025/12/01 23:04:43 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal{
-
-	// protected:
-	// 	std::string _type;
-		
-	private:
-		Brain* _brain;
-
-	public:
-		Cat();
-		Cat(const Cat& copy);
-		Cat& operator=(const Cat& other);
-		virtual ~Cat();
-		virtual void makeSound(void) const;
-		// std::string getType() const;
-		Brain* getBrain() const;
+class Cure : public AMateria{
+    public:
+        Cure();
+        Cure(const Cure& copy);
+        Cure& operator=(const Cure& other);
+        virtual ~Cure();
+        
+        virtual AMateria* clone() const;
+        virtual void use(ICharacter& target);
 };

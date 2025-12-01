@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:23:46 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/30 17:55:29 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:42:19 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 class Cat : public AAnimal{
 
-	protected:
-		std::string _type;
+	// protected:
+	// 	std::string _type;
 		
 	private:
 		Brain* _brain;
@@ -28,6 +28,6 @@ class Cat : public AAnimal{
 		Cat& operator=(const Cat& other);
 		virtual ~Cat();
 		virtual void makeSound(void) const;
-		std::string getType() const;
+		// std::string getType() const;
 		Brain* getBrain() const;
 };

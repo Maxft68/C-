@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:57:12 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/29 18:06:43 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:34:14 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ Cat::~Cat(){
 	delete this->_brain;
 }
 
-std::string Cat::getType() const{
-	return this->_type;
-}
+// std::string Cat::getType() const{
+// 	return this->_type;
+// }
 
 Brain* Cat::getBrain() const{
 	return this->_brain;

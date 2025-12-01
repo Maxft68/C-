@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:56:44 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/30 17:56:34 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:44:21 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ class Dog : public AAnimal{
 	private:
 		Brain* _brain;
 		
-	protected:
-		std::string _type;
+	// protected:
+	// 	std::string _type;
 
 	public:
 		Dog();
@@ -27,6 +27,6 @@ class Dog : public AAnimal{
 		Dog& operator=(const Dog& other);
 		virtual ~Dog();
 		virtual void makeSound(void) const;
-		std::string getType() const;
+		// std::string getType() const;
 		Brain* getBrain() const;
 };

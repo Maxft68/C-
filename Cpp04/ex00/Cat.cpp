@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:57:12 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/28 14:22:10 by max              ###   ########.fr       */
+/*   Updated: 2025/12/01 15:33:00 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Cat::~Cat(){
 	std::cout << "Cat destructed" << std::endl;
 }
 
-std::string Cat::getType() const{
-	return this->_type;
-}
+// std::string Cat::getType() const{
+// 	std::cout << "Cat getType called" << std::endl;
+// 	return this->_type;
+// }
