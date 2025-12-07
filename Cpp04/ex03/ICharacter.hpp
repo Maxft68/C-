@@ -6,16 +6,16 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:07:29 by max               #+#    #+#             */
-/*   Updated: 2025/12/01 17:12:18 by max              ###   ########.fr       */
+/*   Updated: 2025/12/07 19:57:13 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "AMateria.hpp"
 
-class AMateria;
+//class AMateria;
 
-class ICharacter //no canonical form on interface
+class ICharacter //no canonical form on interface   
 {
     public:
         virtual ~ICharacter() {}

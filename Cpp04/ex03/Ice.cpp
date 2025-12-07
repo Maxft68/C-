@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:29:32 by max               #+#    #+#             */
-/*   Updated: 2025/12/01 23:00:58 by max              ###   ########.fr       */
+/*   Updated: 2025/12/07 19:52:08 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Ice::Ice() : AMateria("ice"){
 
 Ice::Ice(const Ice& copy) : AMateria(copy){
     std::cout << GREEN_RESET("Ice Copy operator constructed") << std::endl;
+    
 }
 
 Ice& Ice::operator=(const Ice& other){
