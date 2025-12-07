@@ -33,10 +33,12 @@ Character& Character::operator=(const Character& other){
     if (this != &other){
         _name = other._name;
         for (int i = 0; i < 4; i++){
-            if (_inventory[i]){
+            if (_inventory[i])
                 delete _inventory[i];
-            _inventory[i] = other._inventory[i]->clone();
-            }
+            if (other._inventory[i])
+                _inventory[i] = other._inventory[i]->clone();
+            else
+                _inventory[i] = nullptr;
         }
     }
     return *this;
