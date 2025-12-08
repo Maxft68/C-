@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 10:39:03 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/10/25 19:34:56 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:00:38 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Contact{
 		std::string _DarkestSecret;
 		
 	public:
+	int argent;
 		Contact();
 		~Contact();
 		void setFirstName(std::string str);

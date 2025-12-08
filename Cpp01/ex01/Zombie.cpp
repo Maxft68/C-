@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 15:34:27 by max               #+#    #+#             */
-/*   Updated: 2025/11/05 11:46:57 by max              ###   ########.fr       */
+/*   Updated: 2025/12/08 14:14:50 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Zombie::Zombie(std::string name){
 }
 
 Zombie::~Zombie(){
-	std::cout << this->_name << " is going to die." << std::endl;
+	if (!_name.empty())
+		std::cout << this->_name << " is going to die." << std::endl;
+	else
+		std::cout << "Someone is going to die." << std::endl;
 }
 
 void Zombie::setName(std::string name){

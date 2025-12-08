@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:57:25 by max               #+#    #+#             */
-/*   Updated: 2025/11/27 13:08:50 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/08 10:13:40 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 
 int main() {
 
-	DiamondTrap trap("Trap");
-	std::cout << std::endl;
-	trap.whoAmI();
-	std::cout << std::endl;
+	// DiamondTrap trap;
+	// std::cout << std::endl;
+	// trap.whoAmI();
+	// std::cout << std::endl;
 	
-	// {
-	// 	ClapTrap sponge("Bob");
-	// 	sponge.attack("Alice1");
-	// 	std::cout << std::endl;
-	// }
+	{
+		ClapTrap sponge("Bob");
+		sponge.attack("Alice1");
+		std::cout << std::endl;
+	}
 
 	// ScavTrap scav("Scavy");
 	// scav.attack("Bob");
