@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:40:07 by max               #+#    #+#             */
-/*   Updated: 2025/12/07 21:42:11 by max              ###   ########.fr       */
+/*   Updated: 2025/12/11 11:08:25 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource(){
     for (int i = 0; i < 4; i++)
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& copy){
@@ -22,7 +22,7 @@ MateriaSource::MateriaSource(const MateriaSource& copy){
         if (copy._inventory[i])
             _inventory[i] = copy._inventory[i]->clone();
         else
-            _inventory[i] = nullptr;
+            _inventory[i] = NULL;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other){
@@ -33,7 +33,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other){
             if (other._inventory[i])
                 _inventory[i] = other._inventory[i]->clone();
             else
-                _inventory[i] = nullptr;
+                _inventory[i] = NULL;
         }
     }
     return *this;
@@ -49,7 +49,7 @@ MateriaSource::~MateriaSource(){
 void MateriaSource::learnMateria(AMateria* m){
     if (!m) return;
     for (int i = 0; i < 4; i++){
-        if (_inventory[i] == nullptr){
+        if (_inventory[i] == NULL){
             _inventory[i] = m;
             return;
         }

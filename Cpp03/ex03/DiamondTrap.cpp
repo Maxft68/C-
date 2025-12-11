@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 11:24:55 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/27 12:39:20 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/11 10:56:39 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap() {
 	std::cout << "DiamondTrap default constructed." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name) {
-	_name = ClapTrap::_name + "_clap_name";
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
+	_name = name;
 	_hitpoints = FragTrap::_hitpoints;
 	_energy_points = ScavTrap::_energy_points;
 	_attack_damage = FragTrap::_attack_damage;

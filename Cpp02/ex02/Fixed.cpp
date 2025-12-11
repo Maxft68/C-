@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:17:00 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/20 15:50:49 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/11 10:54:17 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,23 +93,19 @@ std::ostream& operator<<(std::ostream& os, const Fixed& other){
 	}
 
 	Fixed Fixed::operator+(const Fixed& other) const{
-		Fixed x(this->_int_value + other._int_value);//Fixed bernard = brigitte + charles
-		return(x);
+		return Fixed(this->toFloat() + other.toFloat());
 	}
 	
 	Fixed Fixed::operator-(const Fixed& other) const{
-		Fixed x(this->_int_value - other._int_value);
-		return(x);
+		return Fixed(this->toFloat() - other.toFloat());
 	}
 
 	Fixed Fixed::operator*(const Fixed& other) const{
-		Fixed x(this->toFloat() * other.toFloat());
-		return(x);
+		return Fixed(this->toFloat() * other.toFloat());
 	}
 
 	Fixed Fixed::operator/(const Fixed& other) const{
-		Fixed x(this->toFloat() / other.toFloat());
-		return(x);
+		return Fixed(this->toFloat() / other.toFloat());
 	}
 	
 	Fixed& Fixed::operator++(void){	//++a
