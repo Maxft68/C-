@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 07:35:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/11/24 15:01:45 by max              ###   ########.fr       */
+/*   Updated: 2025/12/12 08:43:25 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int main( void ) {
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 
-
+	// Fixed c(3);
+	// Fixed d(8);
+	// std::cout << "c + d =" << c + d << std::endl;
+	// std::cout << "c - d =" << c - d << std::endl;
 	// std::cout << std::endl;
 	// Fixed const val1(10);
 	// Fixed const val2(20);
