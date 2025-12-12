@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 07:35:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/12 08:43:25 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/12 08:46:20 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 
 
 int main( void ) {
+	
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+
 	std::cout << b << std::endl;
+	
 	std::cout << Fixed::max( a, b ) << std::endl;
 
 	// Fixed c(3);
