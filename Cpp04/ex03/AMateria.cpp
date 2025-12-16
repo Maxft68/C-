@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 12:26:50 by max               #+#    #+#             */
-/*   Updated: 2025/12/07 19:49:59 by max              ###   ########.fr       */
+/*   Updated: 2025/12/15 14:22:33 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 AMateria::AMateria(){
     this->_type = "Default";
+	this->is_use = false;
     std::cout << GREEN_RESET("AMateria Default operator constructed") << std::endl;
 }
 
 AMateria::AMateria(std::string const &type){
     this->_type = type;
+	this->is_use = false;
     std::cout << GREEN_RESET("AMateria Parameterized operator constructed") << std::endl;
 }
 
 AMateria::AMateria(const AMateria& other){
     this->_type = other._type;
+	this->is_use = false;
     std::cout << GREEN_RESET("AMateria Copy operator constructed") << std::endl;
 }
 
@@ -47,3 +50,10 @@ void AMateria::use(ICharacter& target){
     (void)target;
 }
 
+void AMateria::set_is_use (bool trueorfalse){
+	is_use = trueorfalse;
+}
+
+bool AMateria::get_is_use (void){
+	return (this->is_use);
+}

@@ -3,35 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:40:07 by max               #+#    #+#             */
-/*   Updated: 2025/12/11 11:08:21 by max              ###   ########.fr       */
+/*   Updated: 2025/12/15 15:46:13 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 Character::Character() : _name("Default"){
-    for (int i = 0; i < 4; i++)
-        _inventory[i] = NULL;
+    for (int i = 0; i < 4; i++){
+		_inventory[i] = NULL;
+	}
+	_floor = NULL;
 }
 
 Character::Character(std::string name) : _name(name){
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 4; i++){
         _inventory[i] = NULL;
+	}
+	_floor = NULL;
 }
 
 Character::Character(const Character& copy) : _name(copy._name){
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 4; i++){
         if (copy._inventory[i])
             _inventory[i] = copy._inventory[i]->clone();
         else
             _inventory[i] = NULL;
+	}
+	_floor = NULL;
 }
 
 Character& Character::operator=(const Character& other){
     if (this != &other){
         _name = other._name;
+		if (_floor)
+			delete _floor;
+		_floor = NULL;
         for (int i = 0; i < 4; i++){
             if (_inventory[i])
                 delete _inventory[i];
@@ -45,10 +54,11 @@ Character& Character::operator=(const Character& other){
 }
 
 Character::~Character(){
-    for (int i = 0; i < 4; i++){
-        if (_inventory[i])
-            delete _inventory[i];
-    }
+	for (int i = 0; i < 4 && _inventory[i]; i++) {
+		delete _inventory[i];
+	}
+	if (_floor)
+		delete _floor;
 }
 
 std::string const & Character::getName() const{
@@ -57,18 +67,24 @@ std::string const & Character::getName() const{
 
 void Character::equip(AMateria* m){
     if (!m){
-        std::cout << "Cannot equip." << std::endl;
+        std::cout << "Cannot equip" << std::endl;
         return;
     }
-    
+	if (m->get_is_use() == true){
+		std::cout << "Materia is already use by someone" << std::endl;
+		return;
+	}
     for (int i = 0; i < 4; i++){
         if (_inventory[i] == NULL){
             _inventory[i] = m;
+			m->set_is_use(true);
             std::cout << "Equipped " << m->getType() << " in slot " << i << std::endl;
             return;
         }
     }
     std::cout << "Inventory full, cannot equip " << m->getType() << std::endl;
+	delete m;
+	m = NULL;
 }
 
 void Character::unequip(int idx){
@@ -78,8 +94,13 @@ void Character::unequip(int idx){
     }
     if (_inventory[idx]){
         std::cout << "Unequipped " << _inventory[idx]->getType() << " from slot " << idx << std::endl;
-        _inventory[idx] = NULL;
-    } else {
+		if (_floor)
+			delete _floor;
+		_floor = _inventory[idx];
+		_inventory[idx]->set_is_use(false);
+		_inventory[idx] = NULL;
+    }
+	else {
         std::cout << "No materia to unequip in slot " << idx << std::endl;
     }
 }

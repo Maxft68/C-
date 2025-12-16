@@ -1,25 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/01 16:07:29 by max               #+#    #+#             */
-/*   Updated: 2025/12/15 12:15:27 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/12/16 14:03:40 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/12/16 14:03:52 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Form.hpp"
 
-class AMateria;
-
-class ICharacter //no canonical form on interface   
-{
-    public:
-        virtual ~ICharacter() {}
-        virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
-};

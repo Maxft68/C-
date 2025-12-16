@@ -1,14 +1,14 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 #-fsanitize=address 
-NAME = a.out
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = BureaucratILikeThat
 
-SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRC = main.cpp Bureaucrat.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) 
 
 $(NAME): $(OBJ)
-	@echo Compilation 🧙 🧙 🧙 🧙
+	@echo Compilation ☕ ☕ ☕ ☕ ☕
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:

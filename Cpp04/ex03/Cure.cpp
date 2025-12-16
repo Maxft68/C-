@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 23:06:04 by max               #+#    #+#             */
-/*   Updated: 2025/12/01 23:30:54 by max              ###   ########.fr       */
+/*   Updated: 2025/12/15 15:41:22 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure"){
+Cure::Cure() : AMateria("cure"){
     std::cout << GREEN_RESET("Cure Default operator constructed") << std::endl;
+	this->is_use = false;
 }
 
 Cure::Cure(const Cure& copy) : AMateria(copy){
     std::cout << GREEN_RESET("Cure Copy operator constructed") << std::endl;
+	this->is_use = false;
 }
 
 Cure& Cure::operator=(const Cure& other){

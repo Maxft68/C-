@@ -18,7 +18,7 @@ Ice::Ice() : AMateria("ice"){
 
 Ice::Ice(const Ice& copy) : AMateria(copy){
     std::cout << GREEN_RESET("Ice Copy operator constructed") << std::endl;
-    
+    this->is_use = false;
 }
 
 Ice& Ice::operator=(const Ice& other){

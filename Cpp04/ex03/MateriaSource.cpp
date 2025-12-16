@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:40:07 by max               #+#    #+#             */
-/*   Updated: 2025/12/11 11:08:25 by max              ###   ########.fr       */
+/*   Updated: 2025/12/15 15:52:52 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void MateriaSource::learnMateria(AMateria* m){
             return;
         }
     }
-
     std::cout << "MateriaSource inventory full" << std::endl;
 }
 
@@ -63,5 +62,6 @@ AMateria* MateriaSource::createMateria(std::string const & type){
         if (_inventory[i] && _inventory[i]->getType() == type)
             return _inventory[i]->clone();
     }
+	std::cout << "CreateMateria: Unknow type \\O/ " << std::endl; 
     return 0;
 }

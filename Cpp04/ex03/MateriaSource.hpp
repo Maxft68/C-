@@ -6,12 +6,11 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:40:37 by max               #+#    #+#             */
-/*   Updated: 2025/12/08 10:16:55 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:51:11 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#pragma once
 
 # include "IMateriaSource.hpp"
 
@@ -30,4 +29,3 @@ class MateriaSource : public IMateriaSource
         virtual AMateria* createMateria(std::string const & type);
 };
 
-#endif
