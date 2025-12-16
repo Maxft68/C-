@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:14 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/16 14:30:57 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:46:25 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ class Form{
 std::ostream& operator<<(std::ostream& os, const Form& other){
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
 	return(os);
-}
+} 
