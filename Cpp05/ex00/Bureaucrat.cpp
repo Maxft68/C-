@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 08:33:45 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/16 14:19:29 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/17 19:47:21 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
     std::cout << GREEN_RESET("Constructor name+grade Bureaucrat ") << _name << " created with grade " << _grade << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy){
-	*this = copy;
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade){
 	std::cout << GREEN_RESET("Copy constructor created") << std::endl;
 }
 
