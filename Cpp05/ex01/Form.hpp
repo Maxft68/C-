@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:14 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/17 19:49:34 by max              ###   ########.fr       */
+/*   Updated: 2025/12/18 13:25:30 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Form{
 		
 		std::string getName() const;
 		bool getSigned() const;
-		const int getGradeRequired() const;
-		const int getGradeToExecute() const;
+		int getGradeRequired() const;
+		int getGradeToExecute() const;
 		
 		class GradeTooHighException : public std::exception{
 			public:
@@ -41,5 +41,12 @@ class Form{
 			public:
 				virtual const char* what() const throw();
 		};
+
+		class IsAlreadySigned : public std::exception{
+			public:
+				virtual const char * what() const throw();
+		};
+
+		void beSigned(const Bureaucrat& Bureaucrat);
 };
 std::ostream& operator<<(std::ostream& os, const Form& other);

@@ -6,11 +6,12 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/16 13:58:04 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:21:15 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(){
 	try{
@@ -20,7 +21,7 @@ int main(){
 		max.decrement();
 	}
 	catch (const std::exception& error){
-		std::cerr << "Error catch: " << error.what() << std::endl;
+		std::cerr << "Error catch1: " << error.what() << std::endl << std::endl;
 	}
 	
 	try{
@@ -30,6 +31,22 @@ int main(){
 		maxou.increment();
 	}
 	catch (const std::exception& error){
-		std::cerr << "Error catch: " << error.what() << std::endl;
+		std::cerr << "Error catch2: " << error.what() << std::endl << std::endl;
+	}
+
+	try{
+		Bureaucrat Jean("Jean", 101);
+		Form a;
+		Form b("Bill", 100, 120);
+		
+		//Jean.signForm(b);
+		Jean.signForm(b);
+		//b.beSigned(Jean);
+		//Jean.increment();
+		//b.beSigned(Jean);
+	}
+	catch (const std::exception& error){
+		std::cerr << "Error catch3: " << error.what() << std::endl << std::endl;
+		
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/17 17:43:41 by max              ###   ########.fr       */
+/*   Updated: 2025/12/18 15:17:56 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Form::Form(const std::string name, const int grade_required_to_sign, const int g
     : _name(name), _is_signed(false), _grade_required_to_sign(grade_required_to_sign), _grade_to_execute(grade_to_execute)
 {
     if (grade_required_to_sign < 1 || grade_to_execute < 1)
-        throw Form::GradeTooHighException();
+        throw GradeTooHighException();
     if (grade_required_to_sign > 150 || grade_to_execute > 150)
-        throw Form::GradeTooLowException();
+        throw GradeTooLowException();
     std::cout << GREEN_RESET("Form Parameterized operator constructed") << std::endl;
 }
 
@@ -51,14 +51,39 @@ bool Form::getSigned() const{
     return this->_is_signed;
 }
 
-const int Form::getGradeRequired() const{
+int Form::getGradeRequired() const{
     return this->_grade_required_to_sign;
 }
 
-const int Form::getGradeToExecute() const{
+int Form::getGradeToExecute() const{
     return this->_grade_to_execute;
 }
 
+void Form::beSigned(const Bureaucrat& bureaucrat){
+	if (bureaucrat.getGrade() <= this->getGradeRequired()){
+		if (getSigned() == false){
+			std::cout << "beSigned-> " << bureaucrat.getName() << " signed the form \"" << this->getName() << "\"" << std::endl;
+			this->_is_signed = true;
+		}
+		else
+			throw IsAlreadySigned();
+	}
+	else
+		throw GradeTooLowException();
+}
+
+const char* Form::GradeTooHighException::what() const throw() {
+    return "Form: Grade is too high!";
+}
+
+
+const char* Form::GradeTooLowException::what() const throw() {
+    return "Form: Grade is too low!";
+}
+
+const char* Form::IsAlreadySigned::what() const throw(){
+	return "Already signed";
+}
 
 std::ostream& operator<<(std::ostream& os, const Form& other){
 	os << "The Form name is "<< other.getName() << "he is " << other.getSigned() 
