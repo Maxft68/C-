@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/18 15:17:56 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/18 17:40:30 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ void Form::beSigned(const Bureaucrat& bureaucrat){
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
-    return "Form: Grade is too high!";
+    return "Form: Grade for the form is too high!";
 }
 
 
 const char* Form::GradeTooLowException::what() const throw() {
-    return "Form: Grade is too low!";
+    return "Form: Grade for the form is too low!";
 }
 
 const char* Form::IsAlreadySigned::what() const throw(){
@@ -86,8 +86,8 @@ const char* Form::IsAlreadySigned::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& other){
-	os << "The Form name is "<< other.getName() << "he is " << other.getSigned() 
-    << "the grade to sign is "<< other.getGradeRequired() << "and the grade for \
-    execute this form is " << other.getGradeToExecute() << std::endl;
+	os << "The Form name is "<< other.getName() << ". His he signed? " <<std::boolalpha << other.getSigned() 
+    << ". The grade to sign is "<< other.getGradeRequired() << " and the grade for \
+execute this form is " << other.getGradeToExecute() << std::endl;
 	return(os);
 }
