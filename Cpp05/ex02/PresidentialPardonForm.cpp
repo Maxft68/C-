@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 11:12:56 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/23 13:39:02 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:22:18 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	return *this;
 }
 PresidentialPardonForm::~PresidentialPardonForm(){
-	std::cout << RED_RESET("Copy Constructor PresidentialPardonForm") << std::endl;
+	std::cout << RED_RESET("Destructor PresidentialPardonForm called") << std::endl;
 }
 
 
