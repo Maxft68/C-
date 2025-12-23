@@ -6,12 +6,12 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 08:33:45 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/18 15:28:30 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:56:46 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
 	std::cout << GREEN_RESET("Default constructor bureaucrat created") << std::endl;
@@ -71,16 +71,24 @@ void Bureaucrat::decrement(){
 	std::cout << *this ;
 }
 
-void Bureaucrat::signForm(Form& form){
+void Bureaucrat::signAForm(AForm& Aform){
 	try{
-		form.beSigned(*this);
+		Aform.beSigned(*this);
 	}
 	catch (const std::exception& error){
-		std::cerr << this->_name << " couldn't sign the form \"" << form.getName() << "\" because " << error.what() << std::endl;
+		std::cerr << this->_name << " couldn't sign the Aform \"" << Aform.getName() << "\" because " << error.what() << std::endl;
 	}
 }
 
-
+void Bureaucrat::executeForm(AForm const& form)const{
+	try{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& error){
+		std::cerr << this->_name << " could'nt execute the form \"" << form.getName() << "\" because " << error.what() << std::endl;
+	}
+}
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other){
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;

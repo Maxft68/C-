@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/19 07:47:43 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/23 14:11:31 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,16 @@ const char* AForm::IsAlreadySigned::what() const throw(){
 	return "Already signed";
 }
 
+const char* AForm::FormNotSigned::what() const throw(){
+	return "The form is'nt signed";
+}
 
-void AForm::execute(Bureaucrat const& executor){
-	if (this->_is_signed = false)
+void AForm::execute(Bureaucrat const& executor) const{
+	if (this->_is_signed == false)
 		throw FormNotSigned();
-	if (this->_grade_to_execute > executor.getGrade)
+	if (executor.getGrade() > this->_grade_to_execute)
 		throw GradeTooLowException();
+	this->beExecuted();
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& other){

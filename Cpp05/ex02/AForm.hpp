@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:14 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/19 07:46:58 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:38:58 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,17 @@ class AForm{
 			public:
 				virtual const char* what() const throw();
 		};
-
 		class IsAlreadySigned : public std::exception{
 			public:
 				virtual const char * what() const throw();
 		};
+		class FormNotSigned : public std::exception{
+			public:
+				virtual const char* what() const throw();
+		};
 
 		void beSigned(const Bureaucrat& Bureaucrat);
+		void execute(Bureaucrat const& executor) const;
+		virtual void beExecuted() const = 0;
 };
 std::ostream& operator<<(std::ostream& os, const AForm& other);

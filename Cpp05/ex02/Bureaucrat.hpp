@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 07:58:08 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/18 10:42:52 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2025/12/23 14:22:02 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
+#define BLUE "\033[34m"
 #define RESET "\033[0m"
 
 #define RED_RESET(str) RED << (str) << RESET
 #define GREEN_RESET(str) GREEN << (str) << RESET
+#define BLUE_RESET(str) BLUE << (str) << RESET
 
 
-class Form;
+class AForm;
 
 class Bureaucrat{
 	
@@ -53,7 +55,8 @@ class Bureaucrat{
 		void increment();
 		void decrement();
 
-		void signForm(Form& form);
+		void signAForm(AForm& Aform);
+		void executeForm(AForm const & form) const;
 };
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other);
 
