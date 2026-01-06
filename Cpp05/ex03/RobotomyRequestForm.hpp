@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 08:10:51 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/06 08:17:16 by mdsiurds         ###   ########.fr       */
+/*   Created: 2025/12/23 15:50:29 by mdsiurds          #+#    #+#             */
+/*   Updated: 2025/12/23 16:02:55 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-class AForm;
-
-class ShrubberyCreationForm: public AForm{
-	
+class RobotomyRequestForm : public AForm {
 	private:
 		std::string _target;
-
+		
 	public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-		~ShrubberyCreationForm();
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm const& copy);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+		~RobotomyRequestForm();
 
 		virtual void beExecuted() const;
 };
