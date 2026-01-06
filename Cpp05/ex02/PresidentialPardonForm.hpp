@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 10:15:32 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/23 16:03:47 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:23:32 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PresidentialPardonForm: public AForm{
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm& copy);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
-		~PresidentialPardonForm();
+		virtual ~PresidentialPardonForm();
 
 		virtual void beExecuted() const;
 };

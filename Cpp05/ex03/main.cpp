@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/06 09:48:42 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:07:03 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,69 @@
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <ctime>
 #include <cstdlib>
 
 int main(){
 	std::srand(std::time(NULL));// For the random 1/2 for Robotomy
-	std::cout << std::endl << BLUE_RESET("-------------PresidentForm-------------") << std::endl;
-	try{
-		Bureaucrat President("President", 25);
-		Bureaucrat Jean("Jean", 7);
-		PresidentialPardonForm Document("Paul_target");
-		std::cout << std::endl << BLUE_RESET("-------------TEST 1-------------") << std::endl;
-		Jean.executeForm(Document);//try one before sign
+	// std::cout << std::endl << BLUE_RESET("-------------PresidentForm-------------") << std::endl;
+	// try{
+	// 	Bureaucrat President("President", 25);
+	// 	Bureaucrat Jean("Jean", 7);
+	// 	PresidentialPardonForm Document("Paul_target");
+	// 	std::cout << std::endl << BLUE_RESET("-------------TEST 1-------------") << std::endl;
+	// 	Jean.executeForm(Document);//try one before sign
 		
 		
-		President.signAForm(Document);
-		std::cout << std::endl << BLUE_RESET("-------------TEST 2-------------") << std::endl;
-		Jean.executeForm(Document);// try 2 after sign
+	// 	President.signAForm(Document);
+	// 	std::cout << std::endl << BLUE_RESET("-------------TEST 2-------------") << std::endl;
+	// 	Jean.executeForm(Document);// try 2 after sign
 
 		
-		Jean.increment();
-		Jean.increment();
-		std::cout << std::endl << BLUE_RESET("-------------TEST 3-------------") << std::endl;
-		Jean.executeForm(Document);// try 3 with the valid grade
-	}
-	catch (const std::exception& error){
-		std::cerr << "Error catch3: " << error.what() << std::endl << std::endl;
+	// 	Jean.increment();
+	// 	Jean.increment();
+	// 	std::cout << std::endl << BLUE_RESET("-------------TEST 3-------------") << std::endl;
+	// 	Jean.executeForm(Document);// try 3 with the valid grade
+	// }
+	// catch (const std::exception& error){
+	// 	std::cerr << "Error catch3: " << error.what() << std::endl << std::endl;
 		
-	}
-	std::cout << std::endl << BLUE_RESET("-------------RobotomyForm-------------") << std::endl;
+	// }
+	// std::cout << std::endl << BLUE_RESET("-------------RobotomyForm-------------") << std::endl;
+	// try{
+	// 	Bureaucrat President("President", 70);
+	// 	Bureaucrat Claude("Claude", 40);
+	// 	RobotomyRequestForm Robot("Paul_target");
+	// 	Claude.executeForm(Robot);
+	// 	President.signAForm(Robot);
+	// 	Claude.executeForm(Robot);
+	// }
+	// catch (const std::exception& error){
+	// 	std::cerr << "Error catch4: " << error.what() << std::endl << std::endl;
+	// }
+	
+	// std::cout << std::endl << BLUE_RESET("----------TEST 4---------") << std::endl;
+	// Bureaucrat NoTryCatch("NoTryCatch", 50);
+	// ShrubberyCreationForm ASCII("target tree");
+	// NoTryCatch.executeForm(ASCII);
+	
+	// Bureaucrat JustDoIt("JustDoIt", 136);
+	// JustDoIt.signAForm(ASCII);
+	// JustDoIt.executeForm(ASCII);
+
+	Intern someRandomIntern;
+	AForm* rrf;
+	Bureaucrat Jean("Jean", 1);
+
 	try{
-		Bureaucrat President("President", 70);
-		Bureaucrat Claude("Claude", 40);
-		RobotomyRequestForm Robot("Paul_target");
-		Claude.executeForm(Robot);
-		President.signAForm(Robot);
-		Claude.executeForm(Robot);
+		rrf = someRandomIntern.makeForm("robotomy5 request", "Bender");
+		rrf->beSigned(Jean);
+		delete rrf;
+		std::cout << "Succefull" << std::endl;
 	}
 	catch (const std::exception& error){
-		std::cerr << "Error catch4: " << error.what() << std::endl << std::endl;
+		std::cerr << "Catch 42 " << error.what() << std::endl << std::endl;
 	}
-	
-	std::cout << std::endl << BLUE_RESET("----------TEST 4---------") << std::endl;
-	Bureaucrat NoTryCatch("NoTryCatch", 50);
-	ShrubberyCreationForm ASCII("target tree");
-	NoTryCatch.executeForm(ASCII);
-	
-	Bureaucrat JustDoIt("JustDoIt", 136);
-	JustDoIt.signAForm(ASCII);
-	JustDoIt.executeForm(ASCII);
 }

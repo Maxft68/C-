@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:14 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/23 13:38:58 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:20:14 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AForm{
 		AForm(const std::string name, const int grade_required_to_sign, const int grade_to_execute);
 		AForm(const AForm& copy);
 		AForm& operator=(const AForm& other);
-		~AForm();
+		virtual ~AForm();
 		
 		std::string getName() const;
 		bool getSigned() const;

@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 15:50:29 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/23 16:02:55 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:21:11 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(RobotomyRequestForm const& copy);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-		~RobotomyRequestForm();
+		virtual ~RobotomyRequestForm();
 
 		virtual void beExecuted() const;
 };

@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 08:10:51 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/06 08:17:16 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:23:21 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ShrubberyCreationForm: public AForm{
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& copy);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-		~ShrubberyCreationForm();
+		virtual ~ShrubberyCreationForm();
 
 		virtual void beExecuted() const;
 };
