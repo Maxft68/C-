@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 10:46:11 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/08 14:44:00 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:50:41 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ class ScalarConverter{
 		~ScalarConverter();
 
 		void CastPseudoLitterals(std::string Pseudo);
+		void CastChar();
+		void CastInt();
+		void CastFloat();
+		void CastDouble();
 	
 	public:
 		static void convert(const std::string Something);

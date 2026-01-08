@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 13:33:19 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/08 14:44:16 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:48:59 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ScalarConverter::~ScalarConverter() {}
 void ScalarConverter::CastPseudoLitterals(std::string Pseudo){
 	
 }
+
 void ScalarConverter::convert(const std::string Something) {
 	if (Something == "-inf" || Something == "+inf" || Something == "nan" || Something == "-inff" || Something == "+inff" || Something == "nanf")
 		CastPseudoLitterals(Something);
