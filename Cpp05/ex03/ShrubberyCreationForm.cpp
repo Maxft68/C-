@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:50:56 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/06 10:28:18 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/08 09:16:44 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 }
 
 void ShrubberyCreationForm::beExecuted()const{
-	std::string FileName = this->_target + "_shrubbery";
+	const std::string FileName = this->_target + "_shrubbery";
 	
 	std::ofstream outFile(FileName.c_str());
 	if (outFile.is_open()){
@@ -47,7 +47,7 @@ void ShrubberyCreationForm::beExecuted()const{
 		outFile << " /~~         ~~\\" << std::endl;
 		outFile << "{    Happy ?    }" << std::endl;
 		outFile << " \\  _-     -_  /" << std::endl;
-		outFile << "   ~  \\ //  ~ " << std::endl;
+		outFile << "   ~  \\ /  ~ " << std::endl;
 		outFile << "      | |" << std::endl;
 		outFile << "      | |" << std::endl;
 		outFile << "     // \\\\" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/06 15:07:03 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:42:22 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,15 @@ int main(){
 	Bureaucrat Jean("Jean", 1);
 
 	try{
-		rrf = someRandomIntern.makeForm("robotomy5 request", "Bender");
+		rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
 		rrf->beSigned(Jean);
-		delete rrf;
+		Jean.executeForm(*rrf);
+		
 		std::cout << "Succefull" << std::endl;
 	}
 	catch (const std::exception& error){
 		std::cerr << "Catch 42 " << error.what() << std::endl << std::endl;
 	}
+	if (rrf)
+		delete rrf;
 }
