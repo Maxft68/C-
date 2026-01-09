@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/08 13:42:22 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/09 13:06:28 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,17 @@ int main(){
 	// JustDoIt.executeForm(ASCII);
 
 	Intern someRandomIntern;
-	AForm* rrf;
+	AForm* rrf = NULL;
 	Bureaucrat Jean("Jean", 1);
 
 	try{
-		rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
+		rrf = someRandomIntern.makeForm("shrubbery8 request", "Bender");
+		std::cout << "Succefull1" << std::endl;
 		rrf->beSigned(Jean);
+		std::cout << "Succefull2" << std::endl;
 		Jean.executeForm(*rrf);
 		
-		std::cout << "Succefull" << std::endl;
+		std::cout << "Succefull3" << std::endl;
 	}
 	catch (const std::exception& error){
 		std::cerr << "Catch 42 " << error.what() << std::endl << std::endl;
