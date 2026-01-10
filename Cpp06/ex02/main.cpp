@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 17:43:02 by max               #+#    #+#             */
-/*   Updated: 2026/01/10 18:50:50 by max              ###   ########.fr       */
+/*   Updated: 2026/01/10 21:40:53 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,13 @@ void identify(Base* p) {
 
 void identify(Base& p) {
     try {
-        (void)dynamic_cast<A&>(p);
+        (void)dynamic_cast<A&>(p); //implicit throw if fail
         std::cout << "A" << std::endl;
         return;
     }
-    catch (...) {}
+    catch (...) {
+        //std::cout << "First catch fail" << std::endl;
+    }
 
     try {
         (void)dynamic_cast<B&>(p);
