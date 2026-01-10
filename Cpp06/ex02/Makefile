@@ -1,14 +1,14 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = convert
+NAME = DynamicCast
 
-SRC = main.cpp Serializer.cpp
+SRC = main.cpp A.cpp B.cpp C.cpp Base.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) 
 
 $(NAME): $(OBJ)
-	@echo Compilation 🧚🧚🧚🧚🧚🧚
+	@echo Compilation ☕ ☕ ☕ ☕ ☕
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:

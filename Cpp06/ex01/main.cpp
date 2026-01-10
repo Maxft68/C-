@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 09:17:06 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/09 16:08:39 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:29:03 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ int main() {
     
     uintptr_t ptr = Serializer::serialize(a); //transformation
 	
-    std::cout << "Serialize unsign int : " << ptr << std::endl;
+    std::cout << "Serialize unsign int (dec): " << ptr << std::endl;
+    std::cout << "convert in hexa:(hex): 0x" << std::hex << ptr << std::dec << std::endl;
 
-    Data* b = Serializer::deserialize(ptr);
+    Data* b = Serializer::deserialize(ptr); //retransformation
 
     std::cout << "Adress after :					 " << b << std::endl;
 
