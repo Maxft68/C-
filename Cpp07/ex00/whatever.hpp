@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/09 14:05:39 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/12 16:09:20 by max              ###   ########.fr       */
+/*   Created: 2026/01/12 18:15:47 by max               #+#    #+#             */
+/*   Updated: 2026/01/12 18:24:07 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#pragma once 
 
-Serializer::Serializer() {}
-
-Serializer::Serializer(const Serializer& copy) {
-	(void)copy;
+template <typename T>
+void swap(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
-Serializer& Serializer::operator=(const Serializer& other) {
-	(void)other;
-	return *this;
+template <typename T>
+T const& min(T const& a, T const& b) {
+    return (a < b) ? a : b;
 }
 
-Serializer::~Serializer() {}
-
-
-uintptr_t Serializer::serialize(Data* ptr){
-	return (reinterpret_cast<uintptr_t>(ptr));
-}
-
-
-Data* Serializer::deserialize(uintptr_t raw){
-	return (reinterpret_cast<Data*>(raw));
+template <typename T>
+T const& max(T const& a, T const& b) {
+    return (a > b) ? a : b;
 }
