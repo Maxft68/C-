@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 13:33:19 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/09 12:19:10 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/12 09:50:54 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void ScalarConverter::convert(const std::string Something) {
 	char* end;
 	double value = std::strtod(Something.c_str(), &end);
 
-	if (*end != 0 && (!(*end == 'f') || !(*(end + 1) == 0))) { //if *end is not at the end or not "f\0"
+	if (*end != 0 && (*end != 'f' || *(end + 1) != 0)) { //if *end is not at the end or not "f\0"
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: impossible" << std::endl;
