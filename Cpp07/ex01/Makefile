@@ -1,14 +1,14 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = convert
+NAME = Hit_Terre
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) 
 
 $(NAME): $(OBJ)
-	@echo Compilation 🧚🧚🧚🧚🧚🧚
+	@echo Compilation 🧚🧳 🧚🧳 🧚🧳 🧚🧳 🧚🧳
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:

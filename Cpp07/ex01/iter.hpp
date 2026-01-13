@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:23:44 by max               #+#    #+#             */
-/*   Updated: 2026/01/12 18:43:19 by max              ###   ########.fr       */
+/*   Updated: 2026/01/13 11:10:54 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
+#include <cstddef>
 
-template <typename T, typename Func>
-void iter(T *array, size_t len, void (*func)(T array)) {
+template <typename T, typename F>
+void iter(T *array, const size_t len, F func) {
     if (!array)
-        return;
-    for (int i = 0; i < len; i++) {
+		return;
+    for (size_t i = 0; i < len; i++) {
         func(array[i]);
     }
 }
