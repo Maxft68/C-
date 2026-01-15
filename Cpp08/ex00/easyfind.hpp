@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:13:07 by max               #+#    #+#             */
-/*   Updated: 2026/01/14 18:15:09 by max              ###   ########.fr       */
+/*   Updated: 2026/01/15 12:18:24 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,23 @@
 // std::deque<T> : Double-ended queue. Comme un vecteur, mais optimisé pour ajouter au début et à la fin.
 // std::map<Key, Value> : Stocke des paires clé/valeur triées par clé. Clés uniques.
 // std::set<T> : Stocke des éléments uniques et triés. Utile pour vérifier la présence d'un élément.
+
+class OutOfRange : public std::exception{
+	public:
+		virtual const char* what() const throw(){
+			std::string command = "(for i in $(seq 0 20 80); do echo $i; sleep 1; done; echo 99; sleep 5; echo 100) | zenity --progress --auto-close --time-remaining --cancel-label=\"Don't click here\" --title=\"WARNING\" --text=\"Out Of Range\"";
+			system(command.c_str());
+			return "OutOfRange...";
+		}
+};
+
+template<typename T>
+typename T::iterator easyfind(T &container, int to_find){
+	
+	typename T::iterator iterateur = std::find(container.begin(), container.end(), to_find);
+
+	if (iterateur == container.end()){
+		throw OutOfRange();
+	}
+	return (iterateur);
+};
