@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:03:40 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/18 17:40:30 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:43:02 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ const char* Form::IsAlreadySigned::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& other){
-	os << "The Form name is "<< other.getName() << ". His he signed? " <<std::boolalpha << other.getSigned() 
-    << ". The grade to sign is "<< other.getGradeRequired() << " and the grade for \
+	os << "The Form name is "<< other.getName() << std::endl << "His he signed? " <<std::boolalpha << other.getSigned() 
+    << std::endl << "The grade to sign is "<< other.getGradeRequired() << " and the grade for \
 execute this form is " << other.getGradeToExecute() << std::endl;
 	return(os);
 }

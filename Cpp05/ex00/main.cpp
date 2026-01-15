@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/16 13:58:04 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:39:04 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(){
 		max.decrement();
 	}
 	catch (const std::exception& error){
-		std::cerr << "Error catch: " << error.what() << std::endl;
+		std::cerr << "Error catch1: " << error.what() << std::endl;
 	}
 	
 	try{
@@ -30,6 +30,6 @@ int main(){
 		maxou.increment();
 	}
 	catch (const std::exception& error){
-		std::cerr << "Error catch: " << error.what() << std::endl;
+		std::cerr << "Error catch2: " << error.what() << std::endl;
 	}
 }
