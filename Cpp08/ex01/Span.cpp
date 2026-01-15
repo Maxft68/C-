@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:55:21 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/15 14:58:48 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/15 14:59:22 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void Span::addNumber(int n){
 
     if (_Container.size() == _N)
         throw NotEnoughPlace;
-    _Container.back(n); //voir cplusplus doc deque
+    n = _Container.back(); //voir cplusplus doc deque
 }
