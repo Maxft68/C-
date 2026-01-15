@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:14:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/15 12:56:25 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/15 14:54:56 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,9 @@ class Span {
 
         void addNumber(int n);
 
-        class NotEnoughPLace : public std::exception{
+        class NotEnoughPlace : public std::exception{
             public:
                 virtual const char* what() const throw();
         }
 };
 
-void Span::addNumber(int n){
-    std::deque<int>::iterator end = _Container.end();
-    std::deque<int>::iterator begin = _Container.begin();
-
-    _Container.back
-    if ()
-        throw NotEnoughPlace;
-}
