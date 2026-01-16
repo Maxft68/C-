@@ -6,11 +6,12 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:14:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/16 12:22:29 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/16 15:49:55 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <algorithm>
 #include <deque>
 
 class Span {
@@ -27,11 +28,19 @@ class Span {
 
         void addNumber(int n);
         int shortestSpan();
-        int longestSpan();
+        unsigned int getSize();
+        void printContainer();
+        // int longestSpan();
+
+        class SizeTooSmall : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
 
         class NotEnoughPlace : public std::exception{
             public:
-                virtual const char* what() const throw();
+                virtual const char* what() const throw(){
+                }
         };
 };
 
