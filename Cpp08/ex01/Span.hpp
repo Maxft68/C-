@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:14:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/16 15:49:55 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:17:47 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <algorithm>
 #include <deque>
+#include <climits>
 
 class Span {
     private:
@@ -27,10 +28,13 @@ class Span {
         Span &operator=(const Span &other);
 
         void addNumber(int n);
+        template<typename T>
+        void addNumberS(T num);
+        
         int shortestSpan();
+        int longestSpan();
         unsigned int getSize();
         void printContainer();
-        // int longestSpan();
 
         class SizeTooSmall : public std::exception{
             public:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:55:21 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/16 16:35:21 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/16 18:18:10 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,45 @@ void Span::addNumber(int n){
         _Container.push_front(n);
 }
 
+
+void Span::addNumberS(T num){
+    
+}
+
 int Span::shortestSpan(){
     if (_Container.size() < 2)
         throw SizeTooSmall();
+        
     std::sort(_Container.begin(), _Container.end());
-    int short = 
-
-    return 0;
+    int minSpan = INT_MAX;
+    
+    for (size_t i = 0; i < _Container.size() - 1; i++){
+        int span = _Container[i + 1] - _Container[i];
+        if (span < minSpan)
+            minSpan = span;
+    }
+    return (minSpan);
 }
 
-//longestSpan()
+int Span::longestSpan(){
+    if (_Container.size() < 2)
+        throw SizeTooSmall();
+        
+    std::sort(_Container.begin(), _Container.end());
+    int diff = _Container.end() - _Container.begin(); 
+    //or 
+    // diff = std::max_element(_Container.begin(), _Container.end()) - std::min_element(_Container.begin(), _Container.end());
+
+    return(diff);
+}
+//std::sort(_Container.begin(), _Container.end());
 // std::max_element(_Container.begin(), _Container.end());
 // std::min_element(_Container.begin(), _Container.end());
+
+const char* Span::NotEnoughPlace::what() const throw(){
+    return ("Not Enough place...");
+}
+
+const char* Span::SizeTooSmall::what() const throw(){
+    return ("We need at least 2 values for find a Span");
+}
