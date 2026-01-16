@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/06 14:06:38 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/16 08:20:39 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main(){
 	}
 	
 	std::cout << std::endl << BLUE_RESET("----------TEST 4---------") << std::endl;
-	Bureaucrat NoTryCatch("NoTryCatch", 50);
+	Bureaucrat NoTryCatch("NoTryCatch", 250);
 	ShrubberyCreationForm ASCII("target tree");
 	NoTryCatch.executeForm(ASCII);
 	
