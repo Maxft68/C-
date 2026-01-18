@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:55:21 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/16 18:18:10 by max              ###   ########.fr       */
+/*   Updated: 2026/01/18 13:16:15 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,6 @@ void Span::addNumber(int n){
         _Container.push_front(n);
 }
 
-
-void Span::addNumberS(T num){
-    
-}
-
 int Span::shortestSpan(){
     if (_Container.size() < 2)
         throw SizeTooSmall();
@@ -72,20 +67,27 @@ int Span::shortestSpan(){
     return (minSpan);
 }
 
-int Span::longestSpan(){
+/* int Span::longestSpan(){
     if (_Container.size() < 2)
         throw SizeTooSmall();
         
     std::sort(_Container.begin(), _Container.end());
-    int diff = _Container.end() - _Container.begin(); 
+    
+    int diff = _Container[_Container.size() - 1] - *_Container.begin(); 
     //or 
-    // diff = std::max_element(_Container.begin(), _Container.end()) - std::min_element(_Container.begin(), _Container.end());
+    // diff = *std::max_element(_Container.begin(), _Container.end()) - *std::min_element(_Container.begin(), _Container.end());
 
     return(diff);
+} */
+
+
+int Span::longestSpan(){
+    if (_Container.size() < 2)
+        throw SizeTooSmall();
+    long min = *std::min_element(_Container.begin(), _Container.end());
+    long max = *std::max_element(_Container.begin(), _Container.end());
+    return(max - min);
 }
-//std::sort(_Container.begin(), _Container.end());
-// std::max_element(_Container.begin(), _Container.end());
-// std::min_element(_Container.begin(), _Container.end());
 
 const char* Span::NotEnoughPlace::what() const throw(){
     return ("Not Enough place...");

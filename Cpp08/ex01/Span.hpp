@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:14:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/16 18:17:47 by max              ###   ########.fr       */
+/*   Updated: 2026/01/18 13:44:14 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ class Span {
         Span &operator=(const Span &other);
 
         void addNumber(int n);
-        template<typename T>
-        void addNumberS(T num);
+    
+/*         template<typename iterator>
+        void addNumberS(iterator begin, iterator end); */
+        
+        void addNumberS(std::deque<int>::iterator begin, std::deque<int>::iterator end);
         
         int shortestSpan();
         int longestSpan();
@@ -43,8 +46,15 @@ class Span {
 
         class NotEnoughPlace : public std::exception{
             public:
-                virtual const char* what() const throw(){
-                }
+                virtual const char* what() const throw();
         };
 };
+
+/* template<typename iterator>
+void Span::addNumberS(iterator begin, iterator end){
+    if (_N >= _Container.size() + std::distance(begin, end))
+        _Container.insert(_Container.end(), begin, end);
+    else
+        throw SizeTooSmall();
+} */
 
