@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 09:22:14 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/19 13:59:18 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:16:16 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main()
     mstack.push(17);
     std::cout << "top: " << mstack.top() << std::endl;
     mstack.pop();
+    
     std::cout << "size: " << mstack.size() << std::endl;
     mstack.push(3);
     mstack.push(5);
@@ -39,13 +40,29 @@ int main()
     }
     std::stack<int> s(mstack);
 
+
+    
     std::cout << std::endl << "----------TEST WITH LIST----------" << std::endl;
     
-    std::list<int> list;
-    list.push_front(5);
-    list.push_front(17);
-    std::cout << "top: " << *list.begin() << std::endl;
-    std::cout << "top2: " << list.front() << std::endl;
+    std::list<int> listA;
+    listA.push_back(5);
+    listA.push_back(17);
+    std::cout << "top: " << listA.back() << std::endl;
+    //std::cout << "top2: " << listA.front() << std::endl;
+    listA.pop_back();
+    std::cout << "size: " << listA.size() << std::endl;
+    listA.push_back(3);
+    listA.push_back(5);
+    listA.push_back(737);
+    listA.push_back(0);
+    std::list<int>::iterator listAIt = listA.begin();
+    std::list<int>::iterator listAIter = listA.end();
+    ++listAIt;
+    --listAIt;
+    
+    for (; listAIt != listAIter; listAIt++){
+        std::cout << *listAIt << std::endl;
+    }
     
     // IMPOSSIBLE with container Stack ! std::stack<int>::iterator itS = s.std::deque<int>::iterator::begin();
 
