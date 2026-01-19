@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:13:07 by max               #+#    #+#             */
-/*   Updated: 2026/01/19 09:19:18 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:27:10 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ class OutOfRange : public std::exception{
 	public:
 		virtual const char* what() const throw(){
 			std::string command = "(for i in $(seq 0 20 80); do echo $i; sleep 1; done; echo 99; sleep 5; echo 100) | zenity --progress --auto-close --time-remaining --cancel-label=\"Don't click here\" --title=\"WARNING\" --text=\"Out Of Range\"";
+			//std::string command2 = "(for i in $(seq 0 20 80); do echo $i; sleep 1; done; echo 99; sleep 5; echo 100) | zenity --progress --time-remaining --cancel-label=\"Don't click here\" --title=\"WARNING\" --text=\"Out Of Range\"";
 			system(command.c_str());
+			//system(command2.c_str());
 			return "OutOfRange...";
 		}
 };
