@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:14:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/18 13:44:14 by max              ###   ########.fr       */
+/*   Updated: 2026/01/19 08:29:46 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@ class Span {
         Span &operator=(const Span &other);
 
         void addNumber(int n);
-    
-/*         template<typename iterator>
-        void addNumberS(iterator begin, iterator end); */
-        
         void addNumberS(std::deque<int>::iterator begin, std::deque<int>::iterator end);
         
         int shortestSpan();

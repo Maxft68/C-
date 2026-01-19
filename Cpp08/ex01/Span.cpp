@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:55:21 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/18 13:16:15 by max              ###   ########.fr       */
+/*   Updated: 2026/01/19 08:15:05 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int Span::shortestSpan(){
         
     std::sort(_Container.begin(), _Container.end());
     
-    int diff = _Container[_Container.size() - 1] - *_Container.begin(); 
+    int diff = _Container[_Container.size() - 1] - *_Container.begin();
     //or 
     // diff = *std::max_element(_Container.begin(), _Container.end()) - *std::min_element(_Container.begin(), _Container.end());
 
