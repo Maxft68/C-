@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 13:33:19 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/19 16:15:09 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/20 10:48:49 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
 ScalarConverter::~ScalarConverter() {}
 
 
-void ScalarConverter::convert(const std::string Something) {
+void ScalarConverter::convert(const std::string& Something) {
 	if (Something.length() == 1 && !std::isdigit(Something[0])) {
 		char c = Something[0];
 		if (std::isprint(c))
@@ -48,8 +48,14 @@ void ScalarConverter::convert(const std::string Something) {
 
 	char* end;
 	double value = std::strtod(Something.c_str(), &end);
-
-	if (*end != 0 && (*end != 'f' || *(end + 1) != 0)) { //if *end is not at the end or not "f\0"
+	//std::cout << "value= " << value << std::endl; // PROVISOIRE
+	int nbF = 0;
+	for (int i = 0; *(end + i) != 0; i++){
+		if (*(end + i) == 'f')
+			nbF++;
+	}
+	//std::cout << "nbF: " <<  nbF << std::endl;// provisoire
+	if (Something.length() == 0 || nbF > 1 || (*end != 0 && (*end != 'f')) || (*end == 'f' && *(end - 1) == '.') || (Something[Something.size() - 1] == '.')) { //if *end is not at the end or not "f\0"
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: impossible" << std::endl;
