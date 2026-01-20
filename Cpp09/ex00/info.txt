@@ -1,0 +1,4 @@
+utiliser std::map
+associer date(cle) et prix(valeur)
+gerer annee bissextile et jours valide (39janvier)
+strtod ou stringstream pour convertir les strings en nombres
