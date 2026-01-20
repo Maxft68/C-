@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 09:17:06 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/10 16:29:03 by max              ###   ########.fr       */
+/*   Updated: 2026/01/20 11:31:57 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int main() {
 
 	std::cout << std::endl;
     std::cout << BLUE_RESET("						Data content A: ") << "ID=" << a->number << ", Name=" << a->name << std::endl;
-    std::cout << "Adresse before serialize :			 " << a << std::endl;
+    std::cout << "Adresse before serialize :			 " << RED_RESET(a) << std::endl;
     
     uintptr_t ptr = Serializer::serialize(a); //transformation
 	
-    std::cout << "Serialize unsign int (dec): " << ptr << std::endl;
-    std::cout << "convert in hexa:(hex): 0x" << std::hex << ptr << std::dec << std::endl;
+    std::cout << "Serialize unsign int (dec): " << GREEN_RESET(ptr) << std::endl;
+    std::cout << "convert in hexa:(hex):                           0x" << std::hex << RED_RESET(ptr) << std::dec << std::endl;
 
     Data* b = Serializer::deserialize(ptr); //retransformation
 
-    std::cout << "Adress after :					 " << b << std::endl;
+    std::cout << "Adress after :	  				 " << RED_RESET(b) << std::endl;
 
     if (a == b) {
 		std::cout << std::endl;
@@ -45,6 +45,6 @@ int main() {
     }
 	
 	uintptr_t ptr2 = Serializer::serialize(b);
-	std::cout << "Serialize2 unsign int : " << ptr2 << std::endl;
+	std::cout << "Serialize2 unsign int :     " << GREEN_RESET(ptr2) << std::endl;
     return 0;
 }
