@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:22:43 by max               #+#    #+#             */
-/*   Updated: 2026/01/13 11:18:43 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:02:03 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void increment(int &n) {
 }
 
 template <typename T>
-void printElement(T &element){
+void printElement(T const &element){
 	std::cout << element << " ";
 }
 
@@ -46,6 +46,12 @@ int main() {
     iter(strArray, verif, printElement<std::string>);
 	//iter(strArray, strLen, "Hello");
     std::cout << std::endl << std::endl;
-
+    
+                //CONST
+    std::cout << std::endl << "--- Test 3: Const Int Array ---" << std::endl;
+    const int constArray[] = {10, 20, 30, 40, 50};
+    std::cout << "Const array: ";
+    iter(constArray, len, printElement<int>);
+    std::cout << std::endl;
     return 0;
 }

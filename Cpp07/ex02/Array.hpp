@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 12:06:28 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/13 16:12:45 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:51:41 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ class Array {
 	private:
 		T* _data;
 		unsigned int _size;
+
+
 	public:
 		Array() : 	_data(NULL), _size(0){}
 		
@@ -47,6 +49,7 @@ class Array {
 		}
 		
 		~Array(){
+			//std::cout << "Destructor call" << std::endl;
 			if (_data)
 				delete [] _data;
 		}
@@ -59,8 +62,11 @@ class Array {
 		};
 		
 		T& operator[](unsigned int index) const{ 
-			if(index >= this->_size || index < 0)
+			if(index >= this->_size || index < 0){
+				std::cout << "index= " << index << std::endl;
+				std::cout << "size= " <<_size << std::endl;
 				throw outOfBounds();
+			}
 			return(_data[index]);
 		}
 		
@@ -68,12 +74,3 @@ class Array {
 			return(_size);
 		}
 };
-
-
-// int array[taille];
-
-// int *array = malloc(sizeof(int * taille));
-
-// while (array[i])
-// 	free array[i]
-// free array;
