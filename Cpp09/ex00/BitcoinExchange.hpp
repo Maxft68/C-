@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:17:34 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/22 14:52:34 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/01/23 08:59:14 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <map>
 #include <fstream>
 #include <string>
+#include <stdlib.h>
+#include <iomanip>
 
 class BitcoinExchange{
     public:
@@ -24,5 +26,5 @@ class BitcoinExchange{
         BitcoinExchange& operator=(const BitcoinExchange &other);
     
     private:
-        std::map<std::string, float> _Data;
+        std::map<std::string, double> _Data;
 };

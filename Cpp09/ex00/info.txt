@@ -23,7 +23,7 @@ int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
 2023-04-31 (Avril n'a que 30 jours)
 
 2023-0-10 (Mois 0 n'existe pas)
-
+<0btc et >1000btc
 
 
 
