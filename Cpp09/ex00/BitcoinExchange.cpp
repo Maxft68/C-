@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 14:20:03 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/12 19:33:06 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/12 20:35:32 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void BitcoinExchange::parseString(std::string& string){
     if (pos == std::string::npos)
         std::cout << "Error: bad input => " << string << std::endl;
     else{
-        _Day = string.substr(0, pos);
+        _Day = string.substr(0, pos - 1);
         std::cout << "DAYYYYYY=" << _Day << ":" << std::endl;
         char *end = NULL;
         
