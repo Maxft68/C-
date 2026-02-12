@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:13:07 by max               #+#    #+#             */
-/*   Updated: 2026/02/12 13:01:08 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/12 13:09:15 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <iterator>
 #include <iostream>
+#include <cstdlib>
 #pragma once
 
 // std::vector<T> : Un tableau dynamique. Accès rapide ([]), ajout rapide à la fin, lent au milieu/début. C'est le conteneur par défaut à utiliser 90% du temps.

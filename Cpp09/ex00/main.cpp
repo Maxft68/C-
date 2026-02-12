@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:14:22 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/22 14:56:41 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/12 19:19:14 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ int main(int argc, char **argv){
     }
     
     std::string str_txt;
-    while (std::getline(file, str_txt)){
-        Exchange.parse(str_txt);
+    // /std::getline(file, str_txt);
+    //std::cout << "str_txt = " << str_txt << std::endl;
+    Exchange.receivData();
+    Exchange.exctractArgs(file);
         //std::cout << str << std::endl;
-    }
     file.close();
     
     return 0;

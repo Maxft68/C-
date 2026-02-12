@@ -6,7 +6,7 @@
 /*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 18:11:24 by mdsiurds          #+#    #+#             */
-/*   Updated: 2025/12/08 15:12:50 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:15:51 by mdsiurds         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ bool Account::makeWithdrawal (int withdrawal){
 	this->_amount -= withdrawal;
 	_totalAmount -= withdrawal;
 	std::cout << "index:" << BLUE_RESET(this->_accountIndex) << ";p_amount:" << BLUE_RESET(this->_amount + withdrawal)
-		 << ";withdrawals:" << BLUE_RESET(withdrawal) <<";amount:" << BLUE_RESET(this->_amount) << ";nb_withdrawal:" << BLUE_RESET(_nbWithdrawals) << std::endl;
+		<< ";withdrawals:" << BLUE_RESET(withdrawal) <<";amount:" << BLUE_RESET(this->_amount) << ";nb_withdrawal:" << BLUE_RESET(_nbWithdrawals) << std::endl;
 	return (true);
 }
 
