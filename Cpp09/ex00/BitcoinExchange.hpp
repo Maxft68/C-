@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:17:34 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/12 19:07:58 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/13 15:47:05 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 #include <map>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <stdlib.h>
 #include <cstdlib>
 #include <iomanip>
+#include <cctype>
 
 class BitcoinExchange{
     private:
         std::map<std::string, double> _Data;
-        long int _nbBtc;
+        float _nbBtc;
         std::string _Day;
         
 
@@ -30,7 +32,7 @@ class BitcoinExchange{
         void    exctractArgs(std::ifstream& file); //recupere le file donnee en argument
         void    parseString(std::string& string);
         void    parseDate();    //verifie la date
-        void    parseValue();   //verifie le nb de btc
+        //void    parseValue();   //verifie le nb de btc
         BitcoinExchange();
         ~BitcoinExchange();
         BitcoinExchange(const BitcoinExchange &copy);
