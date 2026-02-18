@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:52:30 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/18 10:38:30 by max              ###   ########.fr       */
+/*   Updated: 2026/02/18 11:15:42 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void sortV(std::vector<int>& v){
     if (v.size() < 2)
         return;
     static int level = 0;
-
+    int level_max = 0;
     //std::vector<std::pair<int, int> > pair; //A IMPLEMENTER PEUTETRE
     
     std::vector<int> main;
@@ -47,31 +47,39 @@ void sortV(std::vector<int>& v){
 
     
     level++;
+    if (level_max < level)
+        level_max = level;
+        
     if (level == 10) // SECURITY
         return;
-    sortV(big);
-    //v = big;
-
+    std::vector<int> newBig;
+    newBig = big;
+    sortV(newBig);
+    
     //INSERTION
+    if (level_max == level)
+        v = newBig;
     level--;
     std::cout << std::endl << std::endl;
-    for (int x = 0; little[x]; x++){
+    for (size_t x = 0; x < little.size(); x++){
         std::cout << "1litlle[x]= " << little[x] << " au level:" << level <<std::endl;
         std::cout << "1big[x]= " << big[x] << " au level:" << level <<std::endl;
     }
     std::cout << std::endl << std::endl;
     for (int x = 0; little[x]; x++){
-        std::cout << "litlle[x]= " << little[x] << " au level:" << level <<std::endl;
-        std::cout << "big[x]= " << big[x] << " au level:" << level <<std::endl;
-        std::vector<int>::iterator it = std::upper_bound(big.begin(), big.end() ,little[x]);
-        big.insert(it, little[x]);
+        // std::cout << "litlle[x]= " << little[x] << " au level:" << level <<std::endl;
+        // std::cout << "big[x]= " << big[x] << " au level:" << level <<std::endl;
+        std::vector<int>::iterator find = std::find(v.begin(), v.end(), big[x]);
+        
+        std::vector<int>::iterator it = std::upper_bound(v.begin(), find ,little[x]);
+        v.insert(it, little[x]);
     }
-    std::cout << "Big apres upper bound= ";
-    for (size_t b = 0; b < big.size(); b++){
-        std::cout << big[b] << " ";
+    std::cout << "V apres upper bound= ";
+    for (size_t b = 0; b < v.size(); b++){
+        std::cout << v[b] << " ";
     }
-    std::cout << std::endl << std::endl;
-    v = big;
+    std::cout << std::endl;
+    //v = big;
 }
 
 void sortD(std::deque<int>& d){
