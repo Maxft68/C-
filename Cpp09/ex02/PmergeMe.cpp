@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:52:30 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/18 11:15:42 by max              ###   ########.fr       */
+/*   Updated: 2026/02/18 17:08:34 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,19 @@ void sortV(std::vector<int>& v){
         std::cout << "1big[x]= " << big[x] << " au level:" << level <<std::endl;
     }
     std::cout << std::endl << std::endl;
-    for (int x = 0; little[x]; x++){
-        // std::cout << "litlle[x]= " << little[x] << " au level:" << level <<std::endl;
-        // std::cout << "big[x]= " << big[x] << " au level:" << level <<std::endl;
-        std::vector<int>::iterator find = std::find(v.begin(), v.end(), big[x]);
-        
-        std::vector<int>::iterator it = std::upper_bound(v.begin(), find ,little[x]);
-        v.insert(it, little[x]);
+
+    std::vector<int> constV = v;
+    for (size_t jacobsthal = 0; jacobsthal < big.size(); jacobsthal++){
+
+        std::vector<int>::iterator index_dans_big = std::find(big.begin(), big.end(), constV[jacobsthal]);
+        int index_big = index_dans_big - big.begin();
+        int index_little = index_big;
+        std::vector<int>::iterator index_constV_dans_V = std::find(v.begin(), v.end(), constV[jacobsthal]);
+        std::vector<int>::iterator insere_ici = std::upper_bound(v.begin(), index_constV_dans_V, little[index_little]);
+        v.insert(insere_ici, little[index_little]);
+        // trouver pair de v[x];
+        // pair de v[x] = find dans big v[x] index dans big;
+        // meme index dans little est a mettre upper_bound begin et v.begin + [x]
     }
     std::cout << "V apres upper bound= ";
     for (size_t b = 0; b < v.size(); b++){
@@ -82,7 +88,14 @@ void sortV(std::vector<int>& v){
     //v = big;
 }
 
+int jacobsthal(int size){
+    
+}
+
 void sortD(std::deque<int>& d){
     (void) d;
     usleep(1);
 }
+
+//1 3 2 5 4
+
