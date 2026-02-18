@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:52:30 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/18 17:08:34 by max              ###   ########.fr       */
+/*   Updated: 2026/02/18 17:26:59 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,13 @@ void sortV(std::vector<int>& v){
     //v = big;
 }
 
-int jacobsthal(int size){
-    
+std::vector<int> vJacobsthal(int size){
+    std::vector<int> jacob;
+    jacob.push_back(1);
+    for (int i = 1; i < size + 1; i++){
+        int next = jacob[i] + 2 * jacob[i - 1];
+        jacob.push_back(next);
+    }
 }
 
 void sortD(std::deque<int>& d){
