@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:52:30 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/17 20:46:01 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/18 10:38:30 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void sortV(std::vector<int>& v){
         }
     }
     std::cout << "Level: " << level <<std::endl;
-    std::cout << "Big= ";
+    std::cout << "Big=    ";
     for (size_t b = 0; b < big.size(); b++){
         std::cout << big[b] << " ";
     }
@@ -50,18 +50,28 @@ void sortV(std::vector<int>& v){
     if (level == 10) // SECURITY
         return;
     sortV(big);
-    
+    //v = big;
 
     //INSERTION
-
-    //std::upper_bound(big.begin(), big.end() ,little.begin());
-    std::upper_bound(big.begin(), big.end() ,little[0]);
-    std::cout << "little[1] du level" << level << "= " << little[0] << std::endl;
+    level--;
+    std::cout << std::endl << std::endl;
+    for (int x = 0; little[x]; x++){
+        std::cout << "1litlle[x]= " << little[x] << " au level:" << level <<std::endl;
+        std::cout << "1big[x]= " << big[x] << " au level:" << level <<std::endl;
+    }
+    std::cout << std::endl << std::endl;
+    for (int x = 0; little[x]; x++){
+        std::cout << "litlle[x]= " << little[x] << " au level:" << level <<std::endl;
+        std::cout << "big[x]= " << big[x] << " au level:" << level <<std::endl;
+        std::vector<int>::iterator it = std::upper_bound(big.begin(), big.end() ,little[x]);
+        big.insert(it, little[x]);
+    }
     std::cout << "Big apres upper bound= ";
     for (size_t b = 0; b < big.size(); b++){
         std::cout << big[b] << " ";
     }
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl;
+    v = big;
 }
 
 void sortD(std::deque<int>& d){
