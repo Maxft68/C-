@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:45:58 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/17 18:40:09 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/19 15:01:02 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int argc, char **argv){
         else{
             for (int j = 0; j + 1 < i; j++){
                 if(v[j] == number)
-                    return(std::cerr << "Error: The same number is twice" << std::endl, -1);
+                    return(std::cerr << "Error: There is at least the same number twice" << std::endl, -1);
             }
                 v.push_back(number);
                 d.push_back(number);

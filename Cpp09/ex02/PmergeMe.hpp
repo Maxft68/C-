@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 15:54:31 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/18 10:16:23 by max              ###   ########.fr       */
+/*   Updated: 2026/02/19 12:25:10 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include <sys/time.h>
 #include <unistd.h>
 #include <algorithm>
+#include <cmath>
 
 void sortV(std::vector<int>& v);
 void sortD(std::deque<int>& d);
