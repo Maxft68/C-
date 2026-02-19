@@ -6,20 +6,14 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:52:30 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/19 18:14:05 by max              ###   ########.fr       */
+/*   Updated: 2026/02/19 21:42:57 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-// int getJacobsthal(int i)
-// {
-//     return ((pow(2, i) - pow(-1, i)) / 3);
-// }
-
 std::vector<int> vJacobsthal(int size){
-    //size = 20;
-    std::cout << "size = " << size << std::endl;
+    //std::cout << "size = " << size << std::endl;
     std::vector<int> jacobCase;
     std::vector<int> jacob;
     jacob.push_back(0);
@@ -36,42 +30,42 @@ std::vector<int> vJacobsthal(int size){
     int prev2 = 0;
     int next = 1;
     while (next < size) {
-        next = prev1 + 2 * prev2;
+        next = prev1 + 2 * prev2; // n = n-1 + 2 * n-2
         if (next > size)
             break;
         jacob.push_back(next);
         prev2 = prev1;
         prev1 = next;
     }
-    std::cout << "avec une size de " << size << " on a la suite jacob: ";
-    for (size_t i = 0; i < jacob.size(); i++) {
-        std::cout << jacob[i] << " ";
-    }
-    std::cout << "jacob fini, let's insert the rest" << std::endl;
+    //std::cout << "avec une size de " << size << " on a la suite jacob: ";
+    // for (size_t i = 0; i < jacob.size(); i++) {
+    //     std::cout << jacob[i] << " ";
+    // }
 
     std::vector<int> newJacob;
     int prev = 0;
-    for (size_t i = 0; i < jacob.size(); ++i) {
+    for (size_t i = 0; i < jacob.size(); ++i) { // pour toutes valeurs de jacobsthal
         newJacob.push_back(jacob[i]);
-        for (int k = jacob[i] - 1; k > prev; --k) {
-            newJacob.push_back(k);
+        // On insere toutes les valeurs intermediaire
+        for (int inser = jacob[i] - 1; inser > prev; --inser) {
+            newJacob.push_back(inser);
         }
         prev = jacob[i];
     }
-    for (int k = size; k > prev; --k) {
-        newJacob.push_back(k);
+    // ajout des valeurs restantes jusqu'a size
+    for (int inser = size; inser > prev; --inser) {
+        newJacob.push_back(inser);
     }
     newJacob.erase(newJacob.begin());
     newJacob.erase(newJacob.begin());
-    std::cout << "newJacob=";
-    for (size_t i = 0; i < newJacob.size(); i++) {
-        std::cout << newJacob[i] << " ";
-    }
-    std::cout << std::endl;
+    // std::cout << "newJacob=";
+    // for (size_t i = 0; i < newJacob.size(); i++) {
+    //     std::cout << newJacob[i] << " ";
+    // }
+    // std::cout << std::endl;
     
     return newJacob;
 }
-
 
 
 void sortV(std::vector<int>& v){
@@ -93,28 +87,26 @@ void sortV(std::vector<int>& v){
             little.push_back(v[i]);
         }
     }
-    if (v.size() % 2 != 0)
+    if (v.size() % 2 != 0) //le non pairer rejoint little
         little.push_back(v.back());
-    std::cout << "Level: " << level <<std::endl;
-    std::cout << "Big=    ";
-    for (size_t b = 0; b < big.size(); b++){
-        std::cout << big[b] << " ";
-    }
-    std::cout << std::endl;
+    // std::cout << "Level: " << level <<std::endl;
+    // std::cout << "Big=    ";
+    // for (size_t b = 0; b < big.size(); b++){
+    //     std::cout << big[b] << " ";
+    // }
+    // std::cout << std::endl;
 
-    std::cout << "little= ";
-    for (size_t b = 0; b < little.size(); b++){
-        std::cout << little[b] << " ";
-    }
-    std::cout << std::endl << std::endl;
+    // std::cout << "little= ";
+    // for (size_t b = 0; b < little.size(); b++){
+    //     std::cout << little[b] << " ";
+    // }
+    // std::cout << std::endl << std::endl;
 
     
     level++;
     if (level_max < level)
         level_max = level;
-        
-    if (level == 10) // SECURITY
-        return;
+
     std::vector<int> newBig;
     newBig = big;
     sortV(newBig);
@@ -134,27 +126,25 @@ void sortV(std::vector<int>& v){
     std::vector<int> jacob = vJacobsthal(big.size());
 
     for (int i = 0; i < (int)big.size(); i++){
-        std::cout << "jacob[i] = " << jacob[i] << " big.size =" << (int)big.size() << " i = " << i << std::endl;
+        //std::cout << "jacob[i] = " << jacob[i] << " big.size =" << (int)big.size() << " i = " << i << std::endl;
         std::vector<int>::iterator index_dans_big = std::find(big.begin(), big.end(), constV[jacob[i] - 1]);
         int index_big = index_dans_big - big.begin();
         int index_little = index_big;
         std::vector<int>::iterator index_constV_dans_V = std::find(v.begin(), v.end(), constV[jacob[i] - 1]);
         std::vector<int>::iterator insere_ici = std::upper_bound(v.begin(), index_constV_dans_V, little[index_little]);
         v.insert(insere_ici, little[index_little]);
-        // trouver pair de v[x];
-        // pair de v[x] = find dans big v[x] index dans big;
-        // meme index dans little est a mettre upper_bound begin et v.begin + [x]
+
         if (little[index_little + 1] && !big[index_big + 1]){
+            std::cout << "non pairer: " << little[index_little + 1] << std::endl;
             std::vector<int>::iterator insere_ici = std::upper_bound(v.begin(), v.end(), little[little.size() - 1]); 
             v.insert(insere_ici, little[little.size() - 1]);
         }
     }
-    std::cout << "V apres upper bound= ";
-    for (size_t b = 0; b < v.size(); b++){
-        std::cout << v[b] << " ";
-    }
-    std::cout << std::endl;
-    //v = big;
+    // std::cout << "V apres upper bound= ";
+    // for (size_t b = 0; b < v.size(); b++){
+    //     std::cout << v[b] << " ";
+    // }
+    //std::cout << std::endl;
 }
 
 

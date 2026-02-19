@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:45:58 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/19 15:01:02 by max              ###   ########.fr       */
+/*   Updated: 2026/02/19 21:29:54 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ int main(int argc, char **argv){
     int i = 1;
     for (;argv[i]; i++){
         std::istringstream iss(argv[i]);
-        if (!(iss>> number) || !iss.eof()){
+        if (!(iss>> number) || !iss.eof() || number < 0){
             //std::cout << number << std::endl;
             return(std::cerr << "Error: not valid number" << std::endl, -1);
-            
         }
         else{
             for (int j = 0; j + 1 < i; j++){
@@ -50,6 +49,11 @@ int main(int argc, char **argv){
     gettimeofday(&beginV, NULL);
     sortV(v);
     gettimeofday(&endV, NULL);
+    std::cout << "After:  ";
+    for (size_t b = 0; b < v.size(); b++){
+        std::cout << v[b] << " ";
+    }
+    std::cout << std::endl;
     long timeV = endV.tv_usec - beginV.tv_usec;
     
     struct timeval beginD;
@@ -58,6 +62,6 @@ int main(int argc, char **argv){
     sortD(d);
     gettimeofday(&endD, NULL);
     long timeD = endD.tv_usec - beginD.tv_usec;
-    std::cout << "Time to process a range of " << i - 1 << " elements with std::deque: " << timeD << " us" << std::endl;
     std::cout << "Time to process a range of " << i - 1 << " elements with std::vector: " << timeV << " us" << std::endl;
+    std::cout << "Time to process a range of " << i - 1 << " elements with std::deque:  " << timeD << " us" << std::endl;
 }
