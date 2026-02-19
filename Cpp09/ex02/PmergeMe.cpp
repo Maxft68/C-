@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 17:52:30 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/19 18:09:06 by max              ###   ########.fr       */
+/*   Updated: 2026/02/19 18:14:05 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,10 @@ void sortV(std::vector<int>& v){
         // trouver pair de v[x];
         // pair de v[x] = find dans big v[x] index dans big;
         // meme index dans little est a mettre upper_bound begin et v.begin + [x]
-    }
-    if (little.size() % 2 != 0){
-        std::vector<int>::iterator insere_ici = std::upper_bound(v.begin(), v.end(), little[little.size() - 1]); 
-        v.insert(insere_ici, little[little.size() - 1]);
+        if (little[index_little + 1] && !big[index_big + 1]){
+            std::vector<int>::iterator insere_ici = std::upper_bound(v.begin(), v.end(), little[little.size() - 1]); 
+            v.insert(insere_ici, little[little.size() - 1]);
+        }
     }
     std::cout << "V apres upper bound= ";
     for (size_t b = 0; b < v.size(); b++){
