@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 09:19:04 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/19 13:04:10 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:40:41 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ class MutantStack : public std::stack<T>{ // = std::stack<T, std::deque<T>>
 
         
         iterator begin(){
-            return (this->c.begin());
+            return (this->c.begin()); // = stack->deque.begin()
         };
         
         iterator end(){
-            return(this->c.end());//stack->deque.end() 'c' is the default container of stack
+            return(this->c.end());// = stack->deque.end() 'c' is the default container of stack
         };
 
         const_iterator cbegin() const{

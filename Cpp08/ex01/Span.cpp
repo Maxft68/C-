@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:55:21 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/19 08:15:05 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/20 12:32:22 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ void Span::printContainer(){
 }
 
 void Span::addNumber(int n){
-    // std::deque<int>::iterator end = _Container.end();
-    // std::deque<int>::iterator begin = _Container.begin();
 
     if (_Container.size() == _N)
         throw NotEnoughPlace();

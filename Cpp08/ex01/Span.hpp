@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:14:07 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/19 08:29:46 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:15:19 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 #include <algorithm>
 #include <deque>
@@ -45,12 +46,4 @@ class Span {
                 virtual const char* what() const throw();
         };
 };
-
-/* template<typename iterator>
-void Span::addNumberS(iterator begin, iterator end){
-    if (_N >= _Container.size() + std::distance(begin, end))
-        _Container.insert(_Container.end(), begin, end);
-    else
-        throw SizeTooSmall();
-} */
 

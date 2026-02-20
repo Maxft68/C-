@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 09:22:14 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/01/19 14:16:16 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:38:33 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int main()
     listA.push_back(5);
     listA.push_back(17);
     std::cout << "top: " << listA.back() << std::endl;
-    //std::cout << "top2: " << listA.front() << std::endl;
     listA.pop_back();
     std::cout << "size: " << listA.size() << std::endl;
     listA.push_back(3);
@@ -63,29 +62,24 @@ int main()
     for (; listAIt != listAIter; listAIt++){
         std::cout << *listAIt << std::endl;
     }
-    
-    // IMPOSSIBLE with container Stack ! std::stack<int>::iterator itS = s.std::deque<int>::iterator::begin();
 
+    std::cout << std::endl << "----------TEST WITH OTHER CONTAINER----------" << std::endl;
 
-    
-    // std::cout << std::endl << "----------TEST WITH OTHER CONTAINER----------" << std::endl;
+    MutantStack<int> Mutant;
+    Mutant.push(42);
+    Mutant.push(74);
+    Mutant.push(45);
 
-    // MutantStack<int> Mutant;
-    // Mutant.push(42);
-    // Mutant.push(74);
-    // Mutant.push(45);
+    MutantStack<int>::iterator begin = Mutant.begin();
+    std::cout << "*begin =" << *begin <<std::endl;
+    *begin = 65;
+    std::cout << "*begin after assignation= " << *begin <<std::endl;
 
-    // MutantStack<int>::iterator begin = Mutant.begin();
-    // std::cout << *begin <<std::endl;
-    // *begin = 65;
-    // std::cout << *begin <<std::endl;
+    MutantStack<int> Jean(Mutant); //copy de mutant
 
-    // MutantStack<int> Jean(Mutant);
-
-    // MutantStack<int>::const_iterator cbegin = Jean.cbegin();
-    // std::cout << *cbegin << std::endl;
-    // // IMPOSSIBLE *cbegin = 42;
-    
+    MutantStack<int>::const_iterator cbegin = Jean.cbegin();
+    std::cout << *cbegin << std::endl;
+    //*cbegin = 42; // IMPOSSIBLE de modifier un const iterator
 
     return 0;
 }
