@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:45:58 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/19 21:29:54 by max              ###   ########.fr       */
+/*   Updated: 2026/02/20 09:48:15 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv){
     if (argc < 2){
-        std::cerr << "Error: let's sort some numbers !!" << std::endl;
+        std::cerr << "Error: Give me argument please !!" << std::endl;
         return(-1);
     }
 
@@ -25,7 +25,6 @@ int main(int argc, char **argv){
     for (;argv[i]; i++){
         std::istringstream iss(argv[i]);
         if (!(iss>> number) || !iss.eof() || number < 0){
-            //std::cout << number << std::endl;
             return(std::cerr << "Error: not valid number" << std::endl, -1);
         }
         else{
@@ -61,7 +60,7 @@ int main(int argc, char **argv){
     gettimeofday(&beginD, NULL);
     sortD(d);
     gettimeofday(&endD, NULL);
-    long timeD = endD.tv_usec - beginD.tv_usec;
+    long timeD = (endD.tv_sec - beginD.tv_sec) * 1000000L + (endD.tv_usec - beginD.tv_usec);
     std::cout << "Time to process a range of " << i - 1 << " elements with std::vector: " << timeV << " us" << std::endl;
     std::cout << "Time to process a range of " << i - 1 << " elements with std::deque:  " << timeD << " us" << std::endl;
 }

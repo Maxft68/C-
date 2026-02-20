@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:14:22 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/13 12:53:26 by max              ###   ########.fr       */
+/*   Updated: 2026/02/20 11:12:24 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main(int argc, char **argv){
     
-    (void) argc;
-    // if (argc != 2)
-    //     return (std::cout << "Error: could not open file." << std::endl, 1);
+    // (void) argc;
+    if (argc != 2)
+        return (std::cout << "Error: argv[1] need to be the input.txt" << std::endl, 1);
     
     BitcoinExchange Exchange;
     std::ifstream file(argv[1]);
@@ -25,11 +25,9 @@ int main(int argc, char **argv){
     }
     
     std::string str_txt;
-    // /std::getline(file, str_txt);
-    //std::cout << "str_txt = " << str_txt << std::endl;
     Exchange.receivData(); // stock tout dans ma map
     Exchange.exctractArgs(file); //lis chaque ligne de mon fichier en argument
-        //std::cout << str << std::endl;
+
     file.close();
     
     return 0;

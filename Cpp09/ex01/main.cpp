@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdsiurds <mdsiurds@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:45:58 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/17 15:58:23 by mdsiurds         ###   ########.fr       */
+/*   Updated: 2026/02/20 09:19:00 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ int main(int argc, char **argv){
     }
     
 
-    
     try{
         RPN rpn;
-        //rpn.parseArgs(argv[1]);
         std::string arg = argv[1];
         int index_int = -2;
         for(int i = 0; arg[i]; i++){
@@ -37,7 +35,7 @@ int main(int argc, char **argv){
             else if (arg[i] == ' ')
                 continue;
             else
-                throw std::runtime_error("Error: oilnkbwrkjfrejl");
+                throw std::runtime_error("Error: Use only digit");
 
         }
         std::cout << rpn.getTheAnswer() << std::endl;

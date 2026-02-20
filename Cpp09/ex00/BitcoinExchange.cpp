@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 14:20:03 by mdsiurds          #+#    #+#             */
-/*   Updated: 2026/02/13 17:42:49 by max              ###   ########.fr       */
+/*   Updated: 2026/02/20 11:03:56 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,12 @@ void BitcoinExchange::parseString(std::string& string){
 
         
         if (intYear < 0 || intMonth > 12 || intMonth < 1 || intDay > 31 || intDay < 1){
-            std::cout << "Error: date does'nt exist" <<  _Day << std::endl;
+            std::cout << "Error: date does'nt exist " <<  _Day << std::endl;
             return;
         }
         
         if (intDay == 31 && (intMonth == 4 || intMonth == 6 || intMonth == 9 || intMonth == 1)){
-            std::cout << "Error: date does'nt exist" <<  _Day << std::endl;
+            std::cout << "Error: date does'nt exist " <<  _Day << std::endl;
             return;
         }
         if (intMonth == 2){
@@ -101,7 +101,7 @@ void BitcoinExchange::parseString(std::string& string){
             if (intYear % 4 == 0 && (intYear % 100 != 0 || intYear % 400 == 0))
                 maxDays = 29;
             if (intDay > maxDays){
-                std::cout << "Error: date does'nt exist (bissextile month ?)" <<  _Day << std::endl;
+                std::cout << "Error: date does'nt exist (bissextile month)" <<  _Day << std::endl;
                 return;
             }
                 
